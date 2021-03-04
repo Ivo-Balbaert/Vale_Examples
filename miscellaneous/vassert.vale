@@ -1,0 +1,14 @@
+// vassert(boolean expression, message):
+// 	the expression must return either true or false
+// 	if true, nothing happens; if false, the message is printed out.
+
+// The program stops at the 1st vassert that fails, displaying the error message.
+
+fn main() export {
+    vassert(true, "Test 1 succeeded!");
+    vassert(false, "Test 2 failed!"); // program exits here with => Test 2 failed!
+
+    vassert(2 == 2, "Ok");
+    vassert(2 < 5, "Also ok");
+    vassert(2 > 5, "Not so true!"); // => Not so true!
+}

@@ -1,0 +1,13 @@
+// panic with a string argument prints the message and exits, 
+// __panic exits immediately.
+
+fn main() export {
+    println("before panic1");
+    // panic 1:
+    __panic(); // exits program without message 
+    // when panic1 is commented out:
+    println("between panic1 and 2");
+    // panic 2:
+    panic("panic 2: How on earth did this happen?"); // => panic 2: How on earth did this happen?
+    println("after panic2"); // never printed
+}
