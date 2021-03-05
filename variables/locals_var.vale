@@ -1,0 +1,11 @@
+fn main() export {
+  // typed mutable variable:
+  n! int = 73;
+  mut n = 42;
+  println(n); // => 42
+  
+  // mutable variable with type inference:
+  x! = "Europe!";
+  mut x = "Antarctica!";
+  println(x); // => Antarctica!
+}

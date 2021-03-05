@@ -1,0 +1,11 @@
+fn main() export {
+  // typed locals:
+  b bool = true;
+  n int = 42;
+  v str = "Vale";
+
+  // type inference at assignment:
+  x = "Hi all!";    
+  println(x); // => Hi all!
+}
+

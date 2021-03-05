@@ -1,0 +1,6 @@
+fn main() export {
+  a = 42;
+  b = 108;
+  c = a + b;
+  println(c); // => 150
+}
