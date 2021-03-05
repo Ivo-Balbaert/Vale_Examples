@@ -1,0 +1,7 @@
+
+fn extStrLen(string str) int extern;
+
+fn main() export {
+  len = extStrLen("Vale");
+  println(len); // => 4
+}

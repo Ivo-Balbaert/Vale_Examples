@@ -7,5 +7,5 @@ fn main() int export {
     // continue loop
   }
   // never reached:
-  __panic();
+  panic("should be unreachable");
 }

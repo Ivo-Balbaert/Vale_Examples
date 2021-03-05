@@ -1,0 +1,5 @@
+fn sqrt(x float) float extern;
+
+fn main() export {
+  println(int(sqrt(float(16)))); // => 4
+}
