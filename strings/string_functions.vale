@@ -1,0 +1,26 @@
+fn main() export {
+  // compare with spaceship operator <=> (useful for sorting)
+  println("abc" <=> "abc");  // => 0
+  println("abc" <=> "abd");  // => -1
+  println("abc" <=> "abb");  // => 1
+  println("abc" <=> "ab");   // => 1
+  println("abc" <=> "abce"); // => -1
+
+  testString = "Hello world!";
+  // slicing:
+  println(slice(testString, 1, 7));           // => ello w
+  println(slice(testString, 1, 7).str());     // => ello w
+  
+  // find:
+  println(find(testString, "bork").isEmpty());    // => true
+  println(find(testString, "world").get().begin); // => 6
+  
+  // startsWith:
+  println(testString.startsWith("Hel"));      // => true
+  println(not testString.startsWith("Bork")); // => true
+
+  // endsWith
+  println(testString.endsWith("ld!"));        // => true
+  println(not testString.endsWith("Bork"));   // => true
+
+}

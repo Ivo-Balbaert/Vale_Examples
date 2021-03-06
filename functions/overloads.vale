@@ -1,0 +1,24 @@
+fn main() export {
+    println(add(3, 3)); // => 6
+    println(add("Vale is ", "lovely")); // => Vale is lovely
+
+    println(3 ~ 3);         // => 6
+    println(+("Perfect ", 5));
+    println(+(3, " Holy"));
+    println(+("Magnificent ", true);
+}
+
+// function add is overloaded:
+fn add(a int, b int) infer-ret {+(a, b)}
+fn add(a str, b str) infer-ret {+(a, b)}
+
+// defining the ~ operator:
+fn ~(a int, b int) infer-ret {+(a, b)}
+
+// overloading the + operator :
+// fom builtins\castutils.vale
+fn +(s str, b bool) str {  s + str(b)  }
+fn +(i int, s str) str  {  str(i) + s  }
+fn +(s str, i int) str  {  s + str(i)  }
+
+

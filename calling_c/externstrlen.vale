@@ -1,5 +1,5 @@
 
-fn extStrLen(string str) int extern;
+fn extStrLen(testString str) int extern;
 
 fn main() export {
   len = extStrLen("Vale");

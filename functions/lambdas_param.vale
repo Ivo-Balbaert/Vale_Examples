@@ -1,0 +1,19 @@
+// a lambda as a function parameter
+fn main() export {
+  a = do({ 42 });
+  println(a); // => 42
+
+  b! = 10;
+  { mut b = 42; }(); // the lambda which is called changes b to 42
+  println(b); // => 42
+
+    // double closures:
+  d = 7; 
+  e = { { d }() }();
+  println(e); // => 7
+}
+
+fn do(callable) int { // callable is a lambda, which returns 42
+  callable()          // callable is called
+}
+

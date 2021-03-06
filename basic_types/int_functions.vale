@@ -1,0 +1,14 @@
+fn main() export {
+  n = 5;
+  m = -3;
+
+  println(abs(m));      // => 3
+
+  println(signum(n));   // => 1  
+  println(signum(m));   // => -1  
+  println(signum(0));   // => 0  
+
+  println(min(n, m));   // => -3
+  println(max(n, m));   // => 5
+  
+}

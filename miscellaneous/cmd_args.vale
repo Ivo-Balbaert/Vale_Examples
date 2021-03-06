@@ -1,0 +1,9 @@
+// call with: main 1 2
+fn main() export {
+  println(getMainArg(0)); // => main
+  println(getMainArg(1)); // => 1
+  println(getMainArg(2)); // => 2
+
+  println("Number of arguments: " + numMainArgs()); // => Number of arguments: 3
+}
+

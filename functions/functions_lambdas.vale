@@ -1,0 +1,29 @@
+fn main() export {
+  println("Half-Life " + double(1));         // => Half-Life 2
+  println("Half-Life " + double_infer(1));   // => Half-Life 2
+  println("Half-Life " + double_1line(1));   // => Half-Life 2
+ 
+  double_lambda = (x int){ x * 2 };  // a lambda function
+  double_infer = (x){ x * 2 };
+  double_short = { _ * 2 };
+
+  println("Half-Life " + double_lambda(1));  // => Half-Life 2
+  println("Half-Life " + double_infer(1));   // => Half-Life 2
+  println("Half-Life " + double_short(1));   // => Half-Life 2
+}
+
+fn double(x int) int {  
+  // ret x * 2;
+  // alternatives:
+  // = x * 2;    // using = instead of ret
+  x * 2
+}
+
+// inferring the return type:
+fn double_infer(x int) infer-ret { 
+  x * 2 
+}
+
+// a one-line function:
+fn double_1line(x int) int { x * 2 }
+
