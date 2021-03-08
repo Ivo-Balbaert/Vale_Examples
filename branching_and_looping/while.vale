@@ -6,9 +6,9 @@ fn main() export {
   println(a); // => 42
 
   i! = 10;
-	while (i >= 0) {
-		println("The variable i is now: " + i);
-		mut i = i - 1;
+  while (i >= 0) {
+	  println("The variable i is now: " + i);
+	  mut i = i - 1;
 	}
 // The variable i is now: 9
 // The variable i is now: 8
@@ -20,6 +20,4 @@ fn main() export {
 // The variable i is now: 2
 // The variable i is now: 1
 // The variable i is now: 0
-
-
 }
