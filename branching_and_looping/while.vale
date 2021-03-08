@@ -9,7 +9,7 @@ fn main() export {
   while (i >= 0) {
     println("The variable i is now: " + i);
     mut i = i - 1;
-	}
+  }
 // The variable i is now: 9
 // The variable i is now: 8
 // The variable i is now: 7
