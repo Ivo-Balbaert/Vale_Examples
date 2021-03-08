@@ -20,20 +20,20 @@ fn main() export {
   // adding (concatenating) strings:
   str1 = "Glory to the";
   str2 = "Lizard People";
-  combined = str1 + " " + str2;				// inserting a space
-  println(combined); 									// => Glory to the Lizard People
-  println("Escape from the " + str2); // => Escape from the Lizard People
+  combined = str1 + " " + str2;           // inserting a space
+  println(combined);                      // => Glory to the Lizard People
+  println("Escape from the " + str2);     // => Escape from the Lizard People
   // concatenation of string and integer:
-  println("The holy number is: " + 108);	// => The holy number is: 108
+  println("The holy number is: " + 108);  // => The holy number is: 108
 
   // equality (==) / not equal (!=):
   println(combined == "Glory to the Lizard People"); // => true
-  println("abc" == "def"); 													 // => false
-  println("abc" != "def"); 													 // => true
+  println("abc" == "def");                           // => false
+  println("abc" != "def");                           // => true
 
   // conversion from int and bool to str:
   s = str(108);
-  println(s); 			// => 108
+  println(s); 			           // => 108
 
   bool1 = str(false);
   println(bool1); 	// => false
