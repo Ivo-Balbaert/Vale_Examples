@@ -1,0 +1,13 @@
+fn main() export {
+  bt = true;
+  bf = false;
+
+  println(bt);        // => true
+  println(not bt);    // => false
+
+  println(bt and bf); // => false
+  println(bt or bf);  // => true
+
+  println(bt and not bf);  // => true
+  
+}

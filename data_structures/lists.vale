@@ -1,0 +1,59 @@
+
+// build command: python ..\valec.py build lists.vale ..\vstl\list.vale
+
+fn main() export {
+  // a list of integers:
+  lst = List<int>();
+  lst.add(1);
+  lst.add(3);
+  lst.add(7);
+  println(lst.get(2)); // => 7
+
+  // length of the list:
+  println(len(&lst));  // => 3
+
+  // looping over a list:
+  lst.each( { println(_); } );
+  // 1
+  // 3
+  // 7
+
+  // changing an element:
+  ix! = 2;
+  val = 99;
+  lst.set(ix, val);
+  println(lst.get(2)); // => 99
+
+  lst.each( { println(_); } );
+  // 1
+  // 3
+  // 99
+
+  // check if list contains a given value:
+  println(lst.contains(3)); // => true
+
+  // remove an element:
+  mut ix = 1;
+  lst.remove(ix); 
+  lst.each( { println(_); } );
+  // 1
+  // 99
+
+  // split a string to return a List:
+  s = "Hail Hydra!".split(" ");      // split used as a method
+  // s has type List<StrSlice>
+  println(s.get(0));  // => Hail
+  println(s.get(1));  // => Hydra!
+  s2 = split("Hail Hydra!", " ");    // split used as a function
+  println(s2.get(0)); // => Hail
+  println(s2.get(1)); // => Hydra!
+
+
+  // join a list to get a string:
+  lst2 = List<str>();
+  lst.add("Hail");
+  lst.add("Hydra!");
+  
+
+
+}
