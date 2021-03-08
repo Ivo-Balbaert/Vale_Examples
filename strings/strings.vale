@@ -10,12 +10,12 @@ fn main() export {
   // length of a string:
   println(len("Orion")); 		 // => 5
   // both work, because of UFCS (Universal Function Call Syntax):
-  println(len(c)); 				   // => 9
+  println(len(c));           // => 9
   println(c.len()); 			   // => 9
 
-  empty = ""; 					// empty string
-  println(empty);				// => 
-  println(len(empty));	// => 0
+  empty = "";                // empty string
+  println(empty);				     // => 
+  println(len(empty));	     // => 0
 
   // adding (concatenating) strings:
   str1 = "Glory to the";
