@@ -14,5 +14,11 @@ fn main() export {
   if (not killedGoblin) { 
     println("The goblin is still alive!"); // => The goblin is still alive!
   }
-  
+
+  n! = 4;
+  if (n > 2 and n < 5) { println("The number is either 3 or 4"); }
+  // => The number is either 3 or 4
+  mut n = 1;
+  if (n > 2 or n < 5)  { println("Bigger than 2 or smaller than 5"); }
+  // => Bigger than 2 or smaller than 5
 }
