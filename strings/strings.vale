@@ -1,11 +1,11 @@
 fn main() export {
-// declaring strings:
-// immutable:
-a str = "hello!";
-b = "goodbye!";
-// mutable:
-c! = "end";
-mut c = "beginning";
+	// declaring strings:
+	// immutable:
+	a str = "hello!";
+	b = "goodbye!";
+	// mutable:
+	c! = "end";
+	mut c = "beginning";
 
 	// length of a string:
 	println(len("Orion")); 		 // => 5
