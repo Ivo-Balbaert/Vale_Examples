@@ -5,7 +5,7 @@ fn main() export {
   if (cond < first) { println("first is greater"); } // => first is greater
 
   // nested if:
-  if (first <= 0) { println("first is less than or equal to 0"); 	} 
+  if (first <= 0) { println("first is less than or equal to 0"); } 
   else if (first > 0 and first < cond) { println("first is between 0 and 5"); } 
   else { println("first is 5 or greater"); }     //  => first is 5 or greater
 
