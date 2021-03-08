@@ -1,0 +1,25 @@
+fn main() export {
+  a! = 1;
+  while (a < 42) {
+    mut a = a + 1;
+  }
+  println(a); // => 42
+
+  i! = 10;
+	while (i >= 0) {
+		println("The variable i is now: " + i);
+		mut i = i - 1;
+	}
+// The variable i is now: 9
+// The variable i is now: 8
+// The variable i is now: 7
+// The variable i is now: 6
+// The variable i is now: 5
+// The variable i is now: 4
+// The variable i is now: 3
+// The variable i is now: 2
+// The variable i is now: 1
+// The variable i is now: 0
+
+
+}
