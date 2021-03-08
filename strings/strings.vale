@@ -7,36 +7,35 @@ fn main() export {
   c! = "end";
   mut c = "beginning";
 
-	// length of a string:
-	println(len("Orion")); 		 // => 5
-	// both work, because of UFCS (Universal Function Call Syntax):
-	println(len(c)); 				   // => 9
-	println(c.len()); 			   // => 9
+  // length of a string:
+  println(len("Orion")); 		 // => 5
+  // both work, because of UFCS (Universal Function Call Syntax):
+  println(len(c)); 				   // => 9
+  println(c.len()); 			   // => 9
 
-	empty = ""; 					// empty string
-	println(empty);				// => 
-	println(len(empty));	// => 0
+  empty = ""; 					// empty string
+  println(empty);				// => 
+  println(len(empty));	// => 0
 
-	// adding (concatenating) strings:
-	str1 = "Glory to the";
-	str2 = "Lizard People";
-	combined = str1 + " " + str2;				// inserting a space
-	println(combined); 									// => Glory to the Lizard People
-	println("Escape from the " + str2); // => Escape from the Lizard People
-	// concatenation of string and integer:
-	println("The holy number is: " + 108);	// => The holy number is: 108
+  // adding (concatenating) strings:
+  str1 = "Glory to the";
+  str2 = "Lizard People";
+  combined = str1 + " " + str2;				// inserting a space
+  println(combined); 									// => Glory to the Lizard People
+  println("Escape from the " + str2); // => Escape from the Lizard People
+  // concatenation of string and integer:
+  println("The holy number is: " + 108);	// => The holy number is: 108
 
-	// equality (==) / not equal (!=):
-	println(combined == "Glory to the Lizard People"); // => true
-	println("abc" == "def"); 													 // => false
-	println("abc" != "def"); 													 // => true
+  // equality (==) / not equal (!=):
+  println(combined == "Glory to the Lizard People"); // => true
+  println("abc" == "def"); 													 // => false
+  println("abc" != "def"); 													 // => true
 
-	// conversion from int and bool to str:
-	s = str(108);
-	println(s); 			// => 108
+  // conversion from int and bool to str:
+  s = str(108);
+  println(s); 			// => 108
 
-	bool1 = str(false);
-	println(bool1); 	// => false
-
-	println("***********************************");
+  bool1 = str(false);
+  println(bool1); 	// => false
+  println("***********************************");
 }
