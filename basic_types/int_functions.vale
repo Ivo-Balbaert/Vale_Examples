@@ -10,5 +10,4 @@ fn main() export {
 
   println(min(n, m));   // => -3
   println(max(n, m));   // => 5
-  
 }
