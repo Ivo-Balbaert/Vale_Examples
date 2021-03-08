@@ -4,7 +4,7 @@ fn main() export {
 	a str = "hello!";
 	b = "goodbye!";
 	// mutable:
-  c! = "end";
+	c! = "end";
 	mut c = "beginning";
 
 	// length of a string:
@@ -12,15 +12,15 @@ fn main() export {
 	// both work, because of UFCS (Universal Function Call Syntax):
 	println(len(c)); 				   // => 9
 	println(c.len()); 			   // => 9
-	
+
 	empty = ""; 					// empty string
 	println(empty);				// => 
 	println(len(empty));	// => 0
-	
+
 	// adding (concatenating) strings:
 	str1 = "Glory to the";
-  str2 = "Lizard People";
-  combined = str1 + " " + str2;				// inserting a space
+	str2 = "Lizard People";
+	combined = str1 + " " + str2;				// inserting a space
 	println(combined); 									// => Glory to the Lizard People
 	println("Escape from the " + str2); // => Escape from the Lizard People
 	// concatenation of string and integer:
@@ -37,6 +37,6 @@ fn main() export {
 
 	bool1 = str(false);
 	println(bool1); 	// => false
-	
+
 	println("***********************************");
 }

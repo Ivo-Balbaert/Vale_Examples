@@ -6,4 +6,3 @@ fn main() export {
 
   println("Number of arguments: " + numMainArgs()); // => Number of arguments: 3
 }
-

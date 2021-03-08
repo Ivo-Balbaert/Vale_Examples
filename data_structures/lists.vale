@@ -48,12 +48,8 @@ fn main() export {
   println(s2.get(0)); // => Hail
   println(s2.get(1)); // => Hydra!
 
-
   // join a list to get a string:
   lst2 = List<str>();
   lst.add("Hail");
   lst.add("Hydra!");
-  
-
-
 }

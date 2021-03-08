@@ -3,7 +3,7 @@ fn main() export {
   println("Give a number > 0 and < 100: ");
   n = stdinReadInt();
   if (n <= 0 or n >= 100) { println(" Incorrect input!"); }
-  println("The input was: " + n); // e.g. => The input was: 4
+  println("The input was: " + n);  // e.g. => The input was: 4
 
   arr = MakeArray(n, {_ * 5});     // type of arr here is Array<int>.
   arr.each({ println(_); });
@@ -37,6 +37,3 @@ fn inputKey() int {
     }
   }
 }
-
-
-

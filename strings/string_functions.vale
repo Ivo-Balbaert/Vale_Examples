@@ -22,5 +22,4 @@ fn main() export {
   // endsWith
   println(testString.endsWith("ld!"));        // => true
   println(not testString.endsWith("Bork"));   // => true
-
 }

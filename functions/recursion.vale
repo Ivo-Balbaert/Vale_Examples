@@ -6,5 +6,3 @@ fn fact(x int) int {
   = if (x == 0) { 1 } 
     else { x * fact(x - 1) }
 }
-
-

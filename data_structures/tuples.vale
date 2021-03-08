@@ -1,6 +1,6 @@
 fn main() export {
   t1 = [23, 108, 37, 42, 49];    // tuple with same element type int
-  println(t1.1); // => 108
+  println(t1.1);                 // => 108
 
   t2 = [5, true, "V"];         // different element types
   println("Babylon " + t2.0);  // => Babylon 5

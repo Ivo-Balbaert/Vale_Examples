@@ -7,7 +7,7 @@ fn main() export {
   { mut b = 42; }(); // the lambda which is called changes b to 42
   println(b); // => 42
 
-    // double closures:
+  // double closures:
   d = 7; 
   e = { { d }() }();
   println(e); // => 7

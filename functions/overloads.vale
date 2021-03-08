@@ -1,8 +1,8 @@
 fn main() export {
-    println(add(3, 3)); // => 6
+    println(add(3, 3));                 // => 6
     println(add("Vale is ", "lovely")); // => Vale is lovely
 
-    println(3 ~ 3);         // => 6
+    println(3 ~ 3);                     // => 6
     println(+("Perfect ", 5));
     println(+(3, " Holy"));
     println(+("Magnificent ", true);
