@@ -1,0 +1,18 @@
+struct Ship {
+  name str;
+  size int;
+}
+
+
+fn main() export {
+  allShips = List<Ship>();
+  allShips.add(Ship("Serenity", 9));
+  allShips.add(Ship("Raza", 7));
+  allShips.add(Ship("Dark Star", 42));
+  
+  println(len(&allShips));  // => 3
+
+  second = allShips.get(1);
+  println("The size of the second ship is: " + second.size);
+  // => The size of the second ship is: 7
+}

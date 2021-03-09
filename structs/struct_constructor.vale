@@ -1,0 +1,38 @@
+struct Spaceship {
+  name str;
+  numWings int;
+}
+
+// constructor:
+fn Spaceship() Spaceship {
+  Spaceship("Serenity", 2)
+}
+
+struct Marine {
+  hp int;
+  cool bool;
+}
+
+fn Marine() Marine {
+  // alternative for Marine(10, true)
+  this.hp = 10;
+  this.cool = true;
+}
+
+struct Carrier {
+  hp int;
+  interceptors int;
+}
+
+fn main() export {
+  ship = Spaceship();
+  println(ship.name);                   // => Serenity
+
+  mar = Marine();
+  println(mar.hp);                      // => 10
+
+  mar2 = Marine(9, false);
+  println(mar2.cool);                   // => false
+
+  println(Carrier(400, 8).interceptors); // => 8
+}

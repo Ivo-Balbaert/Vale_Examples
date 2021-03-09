@@ -1,0 +1,12 @@
+struct Spaceship {
+  name str;
+  numWings int;
+}
+
+fn main() export {
+  a = Spaceship("Serenity", 2); 
+  b = a;              // Move the ownership from a to b
+  // b now owns the Spaceship:
+  println(b.name); // Serenity
+  // println(a.name); // error: Can't use local that was already moved
+}

@@ -1,0 +1,11 @@
+struct Spaceship {
+  name str;
+  numWings int;
+}
+
+fn main() export {
+  owningRef = Spaceship("Serenity", 2);
+  nonOwningRef = &owningRef;  // nonOwningRef is a constraint reference
+  println(owningRef.name);    // => Serenity
+  println(nonOwningRef.name); // => Serenity
+}

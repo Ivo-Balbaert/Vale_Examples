@@ -1,0 +1,54 @@
+// struct with immutable fields:
+struct Spaceship {
+  name str;
+  numWings int;
+}
+
+// structs with mutable fields:
+struct MSpaceship {
+  name! str;
+  numWings! int;
+}
+
+// immutable struct:
+struct ImmSpaceship imm {
+  name! str;
+  numWings int;
+}
+
+struct Marine { hp! int; }
+
+struct Carrier {
+  hp int;
+  interceptors! int;
+}
+
+fn main() export {
+  ship = Spaceship("Serenity", 2); // <-- ship is an owning reference
+  println(ship.name);              // => Serenity
+
+  shipI = ImmSpaceship("Sol", 6);  // <-- shipI is an owning reference
+  println(shipI.name);             // => Sol
+
+  // how to change struct values:
+  ship2 = MSpaceship("Serenity", 2);
+  mut ship2.name = "Enterprise";
+  mut ship2.numWings = 3;
+  println(ship2.name);             // => Enterprise
+  println(ship2.numWings);         // => 3
+
+  m = Marine(9);
+  mut m.hp = 4;
+  println(m.hp);                   // => 4
+
+  c = Carrier(400, 8);
+  mut c.interceptors = 42;
+  println(c.interceptors);         // => 42
+  // implicitly drops ship by calling implicit ship^.drop(), 
+  // same for ship2, m and c
+}
+
+// Implicit:
+// fn drop(s Spaceship) {
+//   destruct s;  // frees the memory
+// }

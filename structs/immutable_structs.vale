@@ -1,0 +1,33 @@
+struct Spaceship imm {
+  name str;
+  numWings int;
+}
+
+struct Soldier imm {
+  hp int;
+  mp int;
+  armor int;
+  strength int;
+  agility int;
+  intelligence int;
+}
+
+struct Vec3i imm {
+  x int;
+  y int;
+  z int;
+}
+
+fn main() export {
+  ship = Spaceship("Serenity", 2);
+  println(ship.numWings);     // => 2
+  // ship.name = "XXX";   // error:  expected `;` or `}` after expression, but found: = "XXX";
+  ship2 = ship;
+  println(ship.numWings);     // => 2
+  println(ship2.numWings);    // => 2
+  
+  sd = Soldier(4, 5, 6, 7, 42, 9);
+  println(sd.agility);        // => 42
+
+  println(Vec3i(4, 5, 6).y);  // => 5
+}

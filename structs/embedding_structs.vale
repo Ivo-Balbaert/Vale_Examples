@@ -1,0 +1,19 @@
+struct MyStruct { a int; }
+struct OtherStruct { b MyStruct; }
+
+struct Outer {
+  inner Inner;
+}
+
+struct Inner {
+  x! int;
+}
+
+fn main() export {
+  ms = OtherStruct(MyStruct(11)); 
+  println(ms.b.a);    // => 11
+
+  o = Outer(Inner(73));
+  mut o.inner.x = 42;
+  println(o.inner.x); // => 42
+}
