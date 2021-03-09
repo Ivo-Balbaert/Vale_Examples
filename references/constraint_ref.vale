@@ -18,7 +18,7 @@ fn main() export {
   println(ref.interceptors); // => 8
 
   ship = Spaceship("Serenity", 2);
-  display(&ship);         // => Serenity
+  display(&ship);            // => Serenity
   // you can still use the owning reference ship:
-  println(ship.numWings); // => 2
+  println(ship.numWings);    // => 2
 }
