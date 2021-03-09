@@ -1,0 +1,14 @@
+struct Vec3 imm {
+  x int;
+  y int;
+  z int;
+}
+
+fn main() export {
+  firstRef = Vec3(3, 4, 5);
+  otherRef = firstRef;
+  // otherRef = &firstRef; // works also as a constrained reference
+  thirdRef = firstRef;
+  // Can use all references freely:
+  println(firstRef.x + otherRef.y + thirdRef.z); // => 12
+}

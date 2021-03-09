@@ -1,0 +1,27 @@
+struct Base weakable {
+  name str;
+}
+
+struct Spaceship {
+  name str;
+  origin &&Base;
+}
+
+fn printShipBase(ship &Spaceship) {
+  maybeOrigin = lock(ship.origin);
+  if (not maybeOrigin.isEmpty()) {
+    o = maybeOrigin.get();
+    println("Ship base: " + o.name);
+  } else {
+    println("Ship base unknown!");
+  }
+}
+
+fn main() export {
+  base = Base("Zion");
+  ship = Spaceship("Neb", &&base);
+
+  printShipBase(&ship);  // => Ship base: Zion
+  drop(base);            // Destroys base.
+  printShipBase(&ship);  // => Ship base unknown!
+}

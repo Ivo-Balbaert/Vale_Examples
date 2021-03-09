@@ -1,0 +1,27 @@
+// Name: Serenity
+// Assertion failed! Expected 1 to equal 0.
+// Tried to free concrete that had nonzero RC! Exiting!
+// Solutions: constraint_ref_del_solution1.vale / constraint_ref_del_solution2.vale
+
+struct Spaceship {
+  name str;
+  numWings int;
+}
+
+fn takeAndDestroy(ship Spaceship) {
+  println("Name: " + ship.name);
+  // ship is destroyed here, so constraint ref shipCRef is violated!
+}
+
+// Halting version:
+fn main() export {
+  ship = Spaceship("Serenity", 2); // ship contains an owning ref
+  shipCRef = &ship; // shipCRef contains a constraint ref
+
+  // Move (the ownership of) ship into a function:
+  takeAndDestroy(ship);
+  // program halts here in Assist mode, even without the println line below
+
+  // try to acces ship via constraint ref, but ship is already destroyed:
+  // println("Wings: " + shipCRef.numWings); // --> halts here in Resilient mode
+}

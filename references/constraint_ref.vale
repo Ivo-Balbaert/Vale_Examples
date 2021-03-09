@@ -1,0 +1,24 @@
+struct Carrier {
+  hp int;
+  interceptors int;
+}
+
+struct Spaceship {
+  name str;
+  numWings int;
+}
+
+fn display(s &Spaceship) {
+  println(s.name);
+}
+
+fn main() export {
+  carrier = Carrier(400, 8);
+  ref = &carrier;
+  println(ref.interceptors); // => 8
+
+  ship = Spaceship("Serenity", 2);
+  display(&ship);         // => Serenity
+  // you can still use the owning reference ship:
+  println(ship.numWings); // => 2
+}

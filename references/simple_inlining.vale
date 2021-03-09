@@ -1,0 +1,9 @@
+struct Spaceship {
+  name str;
+  numWings int;
+}
+
+fn main() export {
+  ship = inl Spaceship("Enterprise", 4);
+  println(ship.name); // => Enterprise
+}

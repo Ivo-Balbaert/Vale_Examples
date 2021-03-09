@@ -1,0 +1,18 @@
+struct Engine {
+  model str;
+  fuel int;
+}
+
+struct Spaceship {
+  name str;
+  engine inl Engine;
+}
+
+fn main() export {
+  ship = Spaceship(
+      "Serenity",
+      inl Engine("TCB", 10));
+  println(ship.name);           // => Serenity
+  println(ship.engine.model);   // => TCB
+  println(ship.engine.fuel);    // => 10
+}

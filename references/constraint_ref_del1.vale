@@ -1,0 +1,12 @@
+// When running:
+// Assertion failed! Expected 1 to equal 0.
+// Tried to free concrete that had nonzero RC! Exiting!
+
+struct Marine { hp int; }
+
+fn main() export {
+  m = Marine(7);
+  b = &m;
+  drop(m);        // halts in Assist mode
+  println(b.hp);  // halts in Resilient mode
+}
