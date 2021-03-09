@@ -2,11 +2,13 @@ This site contains working programs written in the [Vale programming language](h
 
 They compile and work in the current version 0.1.1 (2021 Jan 27). They will be kept uptodate which each new Vale version.
 
-**Sources**: - the [Vale guide](https://vale.dev/guide/introduction) or the [Vale samples](https://github.com/ValeLang/Vale/tree/master/Valestrom/Samples/test/main/resources), sometimes slightly modified under [Apache License 2.0](https://github.com/ValeLang/Vale/blob/master/LICENSE)
+**Sources**: 
+- the [Vale guide](https://vale.dev/guide/introduction) or the [Vale samples](https://github.com/ValeLang/Vale/tree/master/Valestrom/Samples/test/main/resources), sometimes slightly modified under [Apache License 2.0](https://github.com/ValeLang/Vale/blob/master/LICENSE)
 
-             - a work in progress to make the [programming idioms](https://www.programming-idioms.org/about#about-block-all-idioms) in Vale
+- a work in progress to make the [programming idioms](https://www.programming-idioms.org/about#about-block-all-idioms) in Vale
 
-             - miscellaneous example programs 
+- miscellaneous other example programs
+
 
 The programs are stored in folders according to their specific Vale characteristics. Each folder contains a .md file with more explanations on each program.
 
