@@ -12,6 +12,5 @@ fn main() export {
   a = Spaceship("Enterprise", 4);
   // Move the Spaceship from a into display's argument b
   display(a);
-  // Can't use a now - a will be dropped after the closing }
-  // println(a.name); // error:  Can't use local that was already moved (CodeVarName2(a))
+  // Can't use anymore - a will be dropped after the closing }
 }
