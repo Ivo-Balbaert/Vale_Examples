@@ -1,0 +1,13 @@
+// 6 - Iterate over list values
+// Do something with each item x of an array-like collection items, regardless indexes.
+fn main() export {
+  lst = ["Storm", "Earth", "Fire"]; // this isa tuple in Vale
+  each lst (x){
+    println(x);
+  }
+}
+
+// =>
+// Storm
+// Earth
+// Fire

@@ -1,0 +1,15 @@
+// Idiom # 21 - Swap values
+fn main() export {
+  a! = 1;
+  b! = 2;
+
+  println("a is: " + a);  // => a is: 1
+  println("b is: " + b);  // => b is: 2
+  
+  temp = a;
+  mut a = b;
+  mut b = temp;
+
+  println("a is: " + a);  // => a is: 2
+  println("b is: " + b);  // => b is: 1
+}

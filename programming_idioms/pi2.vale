@@ -1,0 +1,20 @@
+// 2-  Print Hello World 10 times
+// Loop to execute some code a constant number of times num
+fn main() export {
+    num! int = 1;
+    while (num <= 10) {
+        println(num + ": Hello");
+        mut num = num + 1;
+    }
+}
+
+// 1: Hello
+// 2: Hello
+// 3: Hello
+// 4: Hello
+// 5: Hello
+// 6: Hello
+// 7: Hello
+// 8: Hello
+// 9: Hello
+// 10: Hello

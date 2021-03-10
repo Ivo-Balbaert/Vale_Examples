@@ -1,0 +1,12 @@
+// 3-   Create a procedure
+// Like a function which doesn't return any value, thus has only side effects 
+// (e.g. Print to standard output)
+fn main() export {
+    finish("All");
+}
+
+fn finish(name str) {
+    println("My job here is done. Good bye " + name + "!");  
+}
+
+// => My job here is done. Good bye All!

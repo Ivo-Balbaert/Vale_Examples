@@ -1,0 +1,22 @@
+// 13 -  Iterate over map keys and values
+// Access each key k with its value x from an associative array mymap, and print them.
+// Compile withcommand: 
+// python ..\valec.py build pi13.vale ..\vstl\hashmap.vale ..\vstl\list.vale
+fn main() export {
+  // hashmap of key int, value string
+  map = HashMap<int, str, IntHasher, IntEquator>(IntHasher(), IntEquator());
+  map.add(1, "one");
+  map.add(2, "two");
+  map.add(3, "three");
+
+  map.keys().each((key){
+    print(key + " : ");
+    word? = map.get(key);
+    word = word?^.get(); // TODO try getting rid of this ^, doesnt wanna find the get function
+    println(word);
+  });
+}
+
+// 1 : one
+// 2 : two
+// 3 : three

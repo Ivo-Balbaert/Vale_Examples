@@ -1,0 +1,11 @@
+// 4-   Create a function which returns the square of an integer
+fn main() export {
+    println(square(9));
+}
+
+fn square(i int) int {
+    i * i  
+}
+
+// --> 81
+// different variations possible, also as inner function
