@@ -1,0 +1,34 @@
+interface Bipedal {
+  fn hop(virtual b &Bipedal) void; 
+  fn skip(virtual b &Bipedal) void;
+}
+
+fn hopscotch(b &Bipedal) {
+  b.hop();
+  b.skip();
+  b.hop();
+}
+
+struct Human {  }
+fn hop(h &Human impl Bipedal) { println("A Human hops!"); }
+fn skip(h &Human impl Bipedal) { println("A Human skips!"); }
+impl Bipedal for Human;
+
+struct DarkElf {  }
+fn hop(s &DarkElf impl Bipedal) { println("A DarkElf hops!"); }
+fn skip(s &DarkElf impl Bipedal) { println("A DarkElf skips!"); }
+impl Bipedal for DarkElf;
+
+fn main() export {
+  wulfgar = Human();
+  hopscotch(&wulfgar);
+  drizzt = DarkElf();
+  hopscotch(&drizzt);
+}
+
+// A Human hops!
+// A Human skips!
+// A Human hops!
+// A DarkElf hops!
+// A DarkElf skips!
+// A DarkElf hops!
