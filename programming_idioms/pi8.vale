@@ -29,4 +29,3 @@ fn main() export {
 
   println(map.len());                   // => 3
 }
-

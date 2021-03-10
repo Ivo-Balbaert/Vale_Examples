@@ -1,0 +1,174 @@
+// roguelike.vale - A simple Roguelike game, made in Vale.
+//
+// To build:
+//     python3 valec.py build samples/programs/roguelike.vale vstl/hashmap.vale vstl/list.vale
+//
+// This program displays a map like:
+//   ##########    RCols--->
+//   #......g.#    o
+//   #........#    w
+//   #..g..g..#    s
+//   #..@...g.#    |
+//   #.g......#    
+//   #.g.g..g.#
+//   #g...g...#
+//   #........#
+//   ##########
+// where the player controls the @. When the player tries to move onto a space
+// already occupied by a goblin ("g"), it will destroy the goblin.
+
+struct Vec<N, T> rules(N int) { // generics
+  values [<imm> N * T];  // a struct with field values, 
+                         // which is an immutable array of 2 integers
+}
+
+struct Goblin { // "g" on the map
+  location Vec<2, int>;  // a struct with field location
+}
+
+// if as an expression
+// initializing a 2D-array with a size 10 * 10 and a lambda:
+fn makeBoard() Array<mut, Array<mut, str>> {
+  ret
+    MakeArray(10, (row){
+      MakeArray(10, (col){
+        = if (row == 0) { "#" }
+          else if (col == 0) { "#" }
+          else if (row == 9) { "#" }
+          else if (col == 9) { "#" }
+          else { "." }
+      })
+    });
+}
+
+// eachI looping
+// logical and in an if
+// using a hashmap: keys() - each - get
+// optional type: goblin?
+fn display(
+    board &Array<mut, Array<mut, str>>,
+    goblins &HashMap<int, Goblin, IntHasher, IntEquator>,
+    playerRow int,
+    playerCol int) {
+  toPrint! = "";
+  eachI (&board) (rowI, row){
+    eachI (&row) (cellI, cell){
+      charToPrint! = cell;
+    // display player:
+      if (and(rowI == playerRow, cellI == playerCol)) {
+        mut charToPrint = "@";
+      }
+      else { // display goblins:
+        goblins.keys().each((key){
+          goblin? = goblins.get(key);
+          goblin = goblin?^.get(); // TODO try getting rid of this ^, doesnt wanna find the get function
+          if (and(rowI == goblin.location.values.1, cellI == goblin.location.values.0)) {
+            mut charToPrint = "g";
+          }
+        });
+      }
+      mut toPrint = toPrint + charToPrint; // add to same row
+    } 
+    mut toPrint = toPrint + "\n";
+  } // next row
+  print(toPrint); // print out the map
+}
+
+fn inputKey() int {
+  key! = 0;
+  while (true) {
+    mut key = __getch();     // C routine to get a character from standard input
+    if (key == 10) {}        // Enter key, do nothing 
+    else { ret key; }
+  }
+  __panic(); // should be unreachable
+}
+
+fn goblinAt?(
+  goblins &HashMap<int, Goblin, IntHasher, IntEquator>,
+  goblinKey int,
+  row int,
+  col int) bool {
+  a = goblins.get(goblinKey);
+  b = a^.get(); // to get the value out of an optional
+  (goblinCol, goblinRow) = b.location.values;
+  ret and(row == goblinRow, col == goblinCol);
+}
+
+fn main() export {
+  // print instructions:
+  println("Welcome to the ridiculously simplistic roguelike game!");
+  println("Controls:");
+  println("  w+enter: move up");
+  println("  a+enter: move left");
+  println("  s+enter: move down");
+  println("  d+enter: move right");
+  println("  Q+enter: quit");
+  println("When you attempt to move onto a space occupied by a goblin, it will");
+  println("destroy that goblin. Destroy all goblins to win!");
+
+  board = makeBoard();
+
+  playerRow! = 4;
+  playerCol! = 3;
+
+  // hashmap of key int, value a Goblin struct
+  goblins = HashMap<int, Goblin, IntHasher, IntEquator>(IntHasher(), IntEquator());
+  goblins.add(13, Goblin(Vec([6, 3]))); // [col, row]
+  goblins.add(14, Goblin(Vec([2, 6])));
+  goblins.add(15, Goblin(Vec([5, 7])));
+  goblins.add(17, Goblin(Vec([2, 5])));
+  goblins.add(19, Goblin(Vec([7, 1])));
+  goblins.add(23, Goblin(Vec([3, 3])));
+  goblins.add(24, Goblin(Vec([1, 7])));
+  goblins.add(25, Goblin(Vec([7, 6])));
+  goblins.add(27, Goblin(Vec([4, 6])));
+  goblins.add(29, Goblin(Vec([7, 4])));
+
+  running! = true;
+  while (running) { // game loop
+
+    display(&board, &goblins, playerRow, playerCol);
+
+    newPlayerRow! = playerRow;
+    newPlayerCol! = playerCol;
+
+    key = inputKey();
+    if (key == 81) {         // Q
+      mut running = false;   // --> jump out of game loop
+    } else if (key == 119) { // w - up
+      mut newPlayerRow = newPlayerRow - 1;
+    } else if (key == 115) { // s - down
+      mut newPlayerRow = newPlayerRow + 1;
+    } else if (key == 97) {  // a - left
+      mut newPlayerCol = newPlayerCol - 1;
+    } else if (key == 100) { // d - right
+      mut newPlayerCol = newPlayerCol + 1;
+    } else {
+      println("Unknown key command, try again"); 
+    }
+
+    killedGoblin! = false;
+    // check if a goblin is destroyed:
+    goblins.keys().each((key){
+      // is there a goblin on the new player position?
+      if (goblinAt?(&goblins, key, newPlayerRow, newPlayerCol)) {
+        goblins.remove(key);
+        mut killedGoblin = true;
+      } // --> player does not move!
+    }); 
+
+    if (not killedGoblin) { // move player only when no goblin is killed
+      if (board[newPlayerRow][newPlayerCol] == ".") {
+        mut playerRow = newPlayerRow;
+        mut playerCol = newPlayerCol;
+      }
+    }
+
+    // Test Game-over:
+    if (len(goblins.keys()) == 0) { // all goblins are dead!
+      println("You win!");
+      mut running = false;
+    }
+  }
+}

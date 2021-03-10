@@ -32,5 +32,4 @@ fn main() export {
   println(lst.get(0));                // => 108
   println(lst.get(len(&lst) - 1));    // => 1
   lst.each( { print(_ + " / "); } );  // => 108 / 99 / 81 / 75 / 42 / 7 / 3 / 1 /
-  
 }

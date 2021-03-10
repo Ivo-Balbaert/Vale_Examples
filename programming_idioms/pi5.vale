@@ -11,5 +11,3 @@ fn main() export {
   println(p1.x); // => 2
   println(p1.y); // => 3
 }
-
-
