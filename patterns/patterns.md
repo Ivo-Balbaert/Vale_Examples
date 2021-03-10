@@ -1,0 +1,1 @@
+**destructuring.vale**: the contents of a Vec struct is destructured into three locals in one line: (g, h, i) = makeVec();
