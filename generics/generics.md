@@ -1,0 +1,1 @@
+**generic_structs.vale**: shows how a struct Flock<T> containing a List<T> is implemented for the type Firefly
