@@ -1,0 +1,18 @@
+fn main() export {
+  a = 42;
+  b = 108;
+  
+  println(a == b);  // => false
+  println(a != b);  // => true
+  
+  // the left hand side c is a pattern that stores the incoming data into a local named c
+  c = a + b;
+  println(c);       // => 150
+
+  d = a * b;
+  println(d);       // => 4536
+
+ 	println(5 / 2);   // => 2
+  println(5 mod 2); // => 1
+  println(5 / 0);   // => no runtime error!
+}

@@ -1,7 +1,0 @@
-fn main() export {
-  a = 42;
-  b = 108;
-  // the left hand side is a pattern that stores the incoming data into a local named c
-  c = a + b;
-  println(c); // => 150
-}

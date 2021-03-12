@@ -1,6 +1,6 @@
 **booleans.vale**: shows elementary operations on boolean values
 
-**add_ints.vale**: shows adding integers
+**int_operations.vale**: shows operations ==, !=, +, * / and mod
 
 **int_functions.vale**: shows some functions on integers (abs, signum, min, max)
 

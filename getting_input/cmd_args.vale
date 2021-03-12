@@ -6,3 +6,7 @@ fn main() export {
 
   println("Number of arguments: " + numMainArgs()); // => Number of arguments: 3
 }
+
+
+// fn numMainArgs() int extern;
+// fn getMainArg(i int) str extern;
