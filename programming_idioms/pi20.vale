@@ -1,0 +1,49 @@
+// Idiom #20 -  Return two values
+// Implement a function search which looks for item x in a 2D matrix m.
+// Return indices i, j of the matching cell.
+// Think of the most idiomatic way in the language to return 
+// the two values at the same time.
+
+fn main() export {
+  sm = [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ];
+  to_search = 4;
+
+  found! = false;
+  eachI sm (i, m1){   
+    eachI m1 (j, m2){
+      if (m2 == to_search) {
+        mut found = true;
+        println("The number " + to_search + " was found on row " + i + " and column " + j);
+      }
+    }
+  }
+  if (not found) {
+    println("The number " + to_search + " was not found!");
+  }
+ // => The number 4 was found on row 1 and column 0
+
+// searching in a range (s is number to search): 
+  s! = 1;
+  while (s <= 11) {
+    mut found = false;
+    eachI sm (i, m1){   
+      eachI m1 (j, m2){
+        if (m2 == s) {
+          mut found = true;
+          println("The number " + s + " was found on row " + i + " and column " + j);
+        }
+      }
+    }
+    if (not found) {
+      println("The number " + s + " was not found!");
+    }
+    mut s = s + 2;
+  }
+// =>
+// The number 1 was found on row 0 and column 0
+// The number 3 was found on row 0 and column 2
+// The number 5 was found on row 1 and column 1
+// The number 7 was found on row 2 and column 0
+// The number 9 was found on row 2 and column 2
+// The number 11 was not found!
+}
