@@ -18,7 +18,14 @@ fn main() export {
   n! = 4;
   if (n > 2 and n < 5) { println("The number is either 3 or 4"); }
   // => The number is either 3 or 4
+  // same:
+  if (and(n > 2, n < 5)) { println("The number is either 3 or 4"); }
+  // => The number is either 3 or 4
+  
   mut n = 1;
   if (n > 2 or n < 5)  { println("Bigger than 2 or smaller than 5"); }
   // => Bigger than 2 or smaller than 5
+  if (or(n > 2, n < 5))  { println("Bigger than 2 or smaller than 5"); }
+  // => Bigger than 2 or smaller than 5
+
 }

@@ -2,6 +2,8 @@
 
 **while.vale**: shows a while loop
 
+**fizzbuzz.vale**: combining while-loop and if-conditions
+
 
 
 
