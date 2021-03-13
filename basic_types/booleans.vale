@@ -2,6 +2,11 @@ fn main() export {
   bt = true;
   bf = false;
 
+  row = 2;
+  println(row == 2);       // true
+  b = (row == 2);
+  println(b);              // true
+
   println(bt);             // => true
   println(not bt);         // => false
 

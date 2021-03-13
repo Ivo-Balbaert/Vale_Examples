@@ -1,7 +1,14 @@
 fn main() export {
   first = 10;
   cond = 5;
-  
+  row = 2;
+  col = 5;
+  println(row == 2); // true
+
+  if (row == 2) { println("Right on!"); }   // => Right on!
+  b = (row == 2);
+  if (b) { println("Right on!"); }          // => Right on!
+   
   if (cond < first) { println("first is greater"); } // => first is greater
 
   // nested if:
