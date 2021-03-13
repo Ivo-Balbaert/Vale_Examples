@@ -1,3 +1,4 @@
+// see also tuples.vale
 fn main() export {
   arr1 = MakeArray(5, {_}); //  [0, 1, 2, 3, 4]
   // the type of arr1 is Array<mut, int>
@@ -33,5 +34,13 @@ fn main() export {
   m = 7;
   len =  n + m;
   arr5 = MakeArray(len, {_ / 2});
-  println(arr5[6]);   // 6 / 2 => 3  
+  println(arr5[6]);   // 6 / 2 => 3 
+
+  arr6 = initArr();
+  arr6.each( { print(_ + " - "); } ); // => 0 - 100 - 200 - 300 - 400 - 500 - 600 -
+  println("");
+}
+
+fn initArr() Array<mut, int> {
+  MakeArray(7, { _ * 100 })
 }
