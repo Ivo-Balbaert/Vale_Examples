@@ -1,0 +1,11 @@
+fn main() export {
+  n = 5;
+  (g, h) = double(5);
+  println("The double of " + g + " is: " + h);
+  // => The double of 5 is: 10
+}
+
+fn double(x int) infer-ret {  
+  ret [x, x * 2];
+}
+
