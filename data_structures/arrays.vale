@@ -9,6 +9,9 @@ fn main() export {
   mut arr1.0 = 2;
   println(arr1[0]);         // => 2
 
+  // size of an array:
+  println(arr1.len()); // => 5
+
 // print out all elements:
   arr2 = MakeArray(4, {_ * 2}); // [0, 2, 4, 6]
   arr2.each( { println(_); } );

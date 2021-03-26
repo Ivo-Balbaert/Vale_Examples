@@ -22,17 +22,18 @@ fn main() export {
     println("The goblin is still alive!");       // => The goblin is still alive!
   }
 
-  n! = 4;
+  n = 4;
   if (n > 2 and n < 5) { println("The number is either 3 or 4"); }
   // => The number is either 3 or 4
   // same:
   if (and(n > 2, n < 5)) { println("The number is either 3 or 4"); }
   // => The number is either 3 or 4
   
-  mut n = 1;
-  if (n > 2 or n < 5)  { println("Bigger than 2 or smaller than 5"); }
+  m = 1;
+  if (m > 2 or m < 5) { println("Bigger than 2 or smaller than 5"); }
   // => Bigger than 2 or smaller than 5
-  if (or(n > 2, n < 5))  { println("Bigger than 2 or smaller than 5"); }
+  if (or(m > 2, m < 5)) { println("Bigger than 2 or smaller than 5"); }
   // => Bigger than 2 or smaller than 5
 
+  if (n == 4 and m == 1)  { println("This works!"); }
 }

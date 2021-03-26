@@ -1,0 +1,13 @@
+fn main() export {
+  n = 1;
+  m = 2;
+  width =
+    if (n < m) {
+      = 42;
+    } else {
+      = 150;
+    };
+    println(width); // => 42
+} 
+
+

@@ -14,5 +14,7 @@ fn main() export {
 
  	println(5 / 2);   // => 2
   println(5 mod 2); // => 1
-  println(5 / 0);   // => no runtime error!
+
+  println(0 / 5);   // => 0
+  println(5 * 0);   // => 0
 }

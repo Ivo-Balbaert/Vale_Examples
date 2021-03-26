@@ -60,7 +60,7 @@ fn display(
       }
       else { // display goblins:
         goblins.keys().each((key){
-          goblin? = goblins.get(key);
+          goblin? = goblins.get(key);  // goblin? is an optional boolean
           goblin = goblin?^.get(); // TODO try getting rid of this ^, doesnt wanna find the get function
           if (and(rowI == goblin.location.values.1, cellI == goblin.location.values.0)) {
             mut charToPrint = "g";

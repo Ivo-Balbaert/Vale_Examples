@@ -1,0 +1,13 @@
+fn main() export {
+  a = 1;
+  println("Oops!");               // => Oops!
+  {
+    println("Nested code block"); // => Nested code block
+    a = 54;
+    println(a);                   // => 54
+  }();
+  println(a);                     // => 1
+  b = 5;
+} 
+
+

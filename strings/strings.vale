@@ -38,4 +38,19 @@ fn main() export {
   bool1 = str(false);
   println(bool1); 	// => false
   println("***********************************");
+
+  // ' and escape sequences:
+  s1 = "I'm always working to improve Vale!"; // => I'm always working to improve Vale!
+  println(s1);
+
+  // escape sequences (\n, \r, \t, ...) work:
+  println("\tT"); // =>         T
+  
+  // escaping characters:
+  println("\\");  // => \
+  println("\"");  // => "
+  // don't work yet:
+  println("\'");  // => \'
+  println("\?"); // => \?
+  println("\0"); // => \0
 }
