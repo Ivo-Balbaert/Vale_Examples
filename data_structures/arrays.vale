@@ -35,12 +35,12 @@ fn main() export {
 // 2
 // 4
 // 6
-  eachI &arr2 (ix, p){ println("On index: " + p); }
+  eachI &arr2 (ix, p){ println("On index: " + ix + " is item: " + p); }
 // =>
-// On index: 0
-// On index: 2
-// On index: 4
-// On index: 6
+// On index: 0 is item: 0
+// On index: 1 is item: 2
+// On index: 2 is item: 4
+// On index: 3 is item: 6
   
   arr3 = MakeArray(4, {_ * 5}); // [0, 5, 10, 15]
   println(arr3[3]);    // => 15
