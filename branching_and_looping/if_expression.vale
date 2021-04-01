@@ -8,6 +8,15 @@ fn main() export {
       = 150;
     };
     println(width); // => 42
+
+  something =
+    if (4 < 7) {
+      println("hi!");  // => hi!
+      = 7;    // = ;  needed when multiple statements in block
+    } else {
+      10      // works because its the only statement in the block
+    };
+  println(something); // => 7
 } 
 
 

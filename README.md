@@ -6,11 +6,15 @@ The programs compile and run in the current version 0.1.1 (2021 Jan 27). They wi
 
 The programs are stored in folders according to their specific Vale characteristics. Each folder contains a .md file with more explanations on each program.
 
+Using VSCode as your editor, here is a simple [syntax highlighter](https://github.com/Ivo-Balbaert/vscode-vale).
+
 To compile a program:   _python pathto/valec.py build program.vale_
 
 To run a program:       _main_ (on Windows) or _./a.out_ (on Linux)  
 
 The output of a program is shown in comments after: // =>
+
+
 
 All improvements or contributions welcome!
 
