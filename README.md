@@ -1,5 +1,7 @@
 This site contains working programs written in the [Vale programming language](https://vale.dev/).
 
+![](images/logo.png)
+
 It has mainly an educational purpose:  to help people learn the Vale language by showing correct syntax and working programs. 
 
 The programs compile and run in the current version 0.1.1 (2021 Jan 27). They will be kept uptodate which each new Vale version.
