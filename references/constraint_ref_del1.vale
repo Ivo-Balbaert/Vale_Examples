@@ -1,7 +1,5 @@
 // When running:
-// Assertion failed! Expected 1 to equal 0.
-// Tried to free concrete that had nonzero RC! Exiting!
-
+// Error: Dangling pointers detected!
 struct Marine { hp int; }
 
 fn main() export {

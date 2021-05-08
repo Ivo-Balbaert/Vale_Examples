@@ -6,13 +6,13 @@
 fn main() export {
   // hashmap of key int, value string
   map = HashMap<int, str, IntHasher, IntEquator>(IntHasher(), IntEquator());
-  map.add(1, "one");
-  map.add(2, "two");
-  map.add(3, "three");
+  map!.add(1, "one");
+  map!.add(2, "two");
+  map!.add(3, "three");
 
   println(map.has(2));                  // => true
   println(map.has(42));                 // => false
-  map.add(42, "forty-two");
+  map!.add(42, "forty-two");
   println(map.has(42));                 // => true
   println(map.len());                   // => 4
   
@@ -20,7 +20,7 @@ fn main() export {
   arrK.each( { print(_ + " / "); } );   // => 1 / 2 / 3 / 42 /
   println("");
 
-  map.remove(3);
+  map!.remove(3);
   println(map.has(3));                 // => false
  
   arrV = map.values();

@@ -5,9 +5,9 @@ struct Ship {
 
 fn main() export {
   allShips = List<Ship>();
-  allShips.add(Ship("Serenity", 9));
-  allShips.add(Ship("Raza", 7));
-  allShips.add(Ship("Dark Star", 42));
+  allShips!.add(Ship("Serenity", 9));
+  allShips!.add(Ship("Raza", 7));
+  allShips!.add(Ship("Dark Star", 42));
   
   println(len(&allShips));  // => 3
 

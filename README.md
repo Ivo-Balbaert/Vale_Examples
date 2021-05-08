@@ -4,7 +4,7 @@ This site contains working programs written in the [Vale programming language](h
 
 It has mainly an educational purpose:  to help people learn the Vale language by showing correct syntax and working programs. 
 
-The programs compile and run in the current version 0.1.1 (2021 Jan 27). They will be kept uptodate which each new Vale version.
+The programs compile and run in the current version 0.1.2 (2021 May 7). They will be kept uptodate which each new Vale version.
 
 The programs are stored in folders according to their specific Vale characteristics. Each folder contains a .md file with more explanations on each program.
 

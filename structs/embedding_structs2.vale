@@ -2,19 +2,19 @@ struct Thing {
   v! Vec3i;
 }
 
-struct Vec3i imm {
+struct Vec3i {
   x int;
   y int;
   z int;
 }
 
-fn bork(thing &Thing, v Vec3i) void {
+fn bork(thing &!Thing, v Vec3i) void {
   mut thing.v = v;
 }
 
 fn main() export {
   thing = Thing(Vec3i(7, 8, 9));
   println(thing.v.y); // => 8
-  bork(&thing, Vec3i(4, 5, 6));
+  bork(&!thing, Vec3i(4, 5, 6));
   println(thing.v.y); // => 5
 }

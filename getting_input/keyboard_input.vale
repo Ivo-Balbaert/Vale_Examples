@@ -36,4 +36,6 @@ fn inputKey() int {
     } else if (key == 10) {  // Enter key, do nothing 
     }
   }
+  __panic(); // unreachable, but needed to satisfy compiler, otherwise error:
+  // inputKey return type Coord(Share,Readonly,Int2()) doesn't match body's result: Coord(Share,Readonly,Void2())
 }

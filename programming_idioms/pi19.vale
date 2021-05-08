@@ -5,14 +5,14 @@
 // python ..\valec.py build pi19.vale ..\vstl\list.vale
 fn main() export {
   lst = List<int>();
-  lst.add(1);
-  lst.add(3);
-  lst.add(7);
-  lst.add(42);
-  lst.add(75);
-  lst.add(81);
-  lst.add(99);
-  lst.add(108);
+  lst!.add(1);
+  lst!.add(3);
+  lst!.add(7);
+  lst!.add(42);
+  lst!.add(75);
+  lst!.add(81);
+  lst!.add(99);
+  lst!.add(108);
 
   println(lst.get(0));                // => 1
   println(lst.get(len(&lst) - 1));    // => 108
@@ -23,8 +23,8 @@ fn main() export {
   j! = len(&lst) - 1;
   while (i < j) {
     temp = lst.get(i);
-    lst.set(i, lst.get(j));
-    lst.set(j, temp);
+    lst!.set(i, lst.get(j));
+    lst!.set(j, temp);
     mut i = i + 1;
     mut j = j - 1;
   }

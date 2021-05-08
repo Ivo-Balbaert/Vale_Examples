@@ -5,7 +5,7 @@ fn main() export {
     println(3 ~ 3);                     // => 6
     println(+("Perfect ", 5));
     println(+(3, " Holy"));
-    println(+("Magnificent ", true);
+    println(+("Magnificent ", true));
 }
 
 // function add is overloaded:
@@ -15,10 +15,12 @@ fn add(a str, b str) infer-ret {+(a, b)}
 // defining the ~ operator:
 fn ~(a int, b int) infer-ret {+(a, b)}
 
-// overloading the + operator :
-// fom builtins\castutils.vale
-fn +(s str, b bool) str {  s + str(b)  }
-fn +(i int, s str) str  {  str(i) + s  }
-fn +(s str, i int) str  {  s + str(i)  }
+// overloading the + operator: (// from builtins\castutils.vale)
+// commented out, because gives error 
+// builtins/castutils.vale:14:1: Function FunctionName2(+,List(),List(Coord(Share,Readonly,Str2()), Coord(Share,Readonly,Bool2()))) already exists! Previous declaration at:
+// functions\overloads.vale:20:1
+// fn +(s str, b bool) str {  s + str(b)  }
+// fn +(i int, s str) str  {  str(i) + s  }
+// fn +(s str, i int) str  {  s + str(i)  }
 
 

@@ -4,9 +4,9 @@
 fn main() export {
   // a list of integers:
   lst = List<int>();
-  lst.add(1);
-  lst.add(3);
-  lst.add(7);
+  lst!.add(1);
+  lst!.add(3);
+  lst!.add(7);
   println(lst.get(2)); // => 7
 
   // length of the list:
@@ -34,7 +34,7 @@ fn main() export {
   // changing an element:
   ix! = 2;
   val = 99;
-  lst.set(ix, val);
+  lst!.set(ix, val);
   println(lst.get(2)); // => 99
 
   lst.each( { println(_); } );
@@ -47,7 +47,7 @@ fn main() export {
 
   // remove an element:
   mut ix = 1;
-  lst.remove(ix); 
+  lst!.remove(ix); 
   lst.each( { println(_); } );
   // 1
   // 99
@@ -63,8 +63,8 @@ fn main() export {
 
   // join a list to get a string:
   lst2 = List<str>();
-  lst2.add("Hail");
-  lst2.add("Hydra!");
+  lst2!.add("Hail");
+  lst2!.add("Hydra!");
   each &lst2 { println(_); }
   // =>
   // "Hail"
