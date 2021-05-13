@@ -1,0 +1,11 @@
+struct Vec3 export imm {
+  x int; y int; z int;
+}
+
+fn main() export {
+  v = Vec3(10, 11, 12);
+  s = sum(v);
+  println(s);
+}
+
+fn sum(v Vec3) int extern;

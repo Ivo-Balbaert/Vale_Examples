@@ -1,0 +1,16 @@
+fn main() export {
+  i = readInt();
+  println("User entered: " + i);
+}
+
+fn readInt() int extern;
+
+// main
+// 5 // <-- input
+// => User entered: 5
+// compile with:
+// 
+// replace Cl phaze with:
+// cl.exe /ENTRY:"main" /SUBSYSTEM:CONSOLE /Fe:main.exe /fsanitize=address 
+// clang_rt.asan_dynamic-x86_64.lib clang_rt.asan_dynamic_runtime_thunk-x86_64.lib build.obj C:\Vale\builtins\assert.c C:\Vale\builtins\census.c C:\Vale\builtins\file.c C:\Vale\builtins\genHeap.c C:\Vale\builtins\mainargs.c C:\Vale\builtins\math.c C:\Vale\builtins\stdio.c C:\Vale\builtins\strings.c 
+// C:\Vale\builtins\twinpages.c C:\Vale\builtins\weaks.c readInt.c

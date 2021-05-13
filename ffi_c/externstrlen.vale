@@ -1,0 +1,15 @@
+fn extStrLen(haystackStr str) int extern;
+
+fn main() export {
+  len = extStrLen("sprogwoggle");
+  println(len); // => 11
+}
+
+
+// build with:
+// python ../valec.py build externstrlen.vale
+// then replace 3rd stage with:
+// cl.exe /ENTRY:"main" /SUBSYSTEM:CONSOLE /Fe:main.exe build.obj C:\Vale\builtins\assert.c 
+// C:\Vale\builtins\census.c C:\Vale\builtins\file.c C:\Vale\builtins\genHeap.c C:\Vale\builtins\mainargs.c 
+// C:\Vale\builtins\math.c C:\Vale\builtins\stdio.c C:\Vale\builtins\strings.c C:\Vale\builtins\weaks.c 
+// c:\Vale\code_examples\externstrlen.c

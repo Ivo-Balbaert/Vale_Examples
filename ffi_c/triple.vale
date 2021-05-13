@@ -1,0 +1,13 @@
+fn cMain() extern;
+fn main() export { cMain(); }
+
+fn triple(x int) int export {
+  x * 3
+}
+
+// compile with: python ../valec.py build triple.vale
+// replace 3rd stage with:
+// cl.exe /ENTRY:"main" /SUBSYSTEM:CONSOLE /Fe:main.exe build.obj C:\Vale\builtins\assert.c 
+// C:\Vale\builtins\census.c C:\Vale\builtins\file.c C:\Vale\builtins\genHeap.c 
+// C:\Vale\builtins\mainargs.c C:\Vale\builtins\math.c C:\Vale\builtins\stdio.c 
+// C:\Vale\builtins\strings.c C:\Vale\builtins\weaks.c c:\Vale\code_examples\triple.c

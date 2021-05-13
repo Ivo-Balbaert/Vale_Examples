@@ -1,0 +1,15 @@
+struct Ship export {
+  fuel int;
+}
+
+fn getFuel(s &Ship) int export {
+  s.fuel
+}
+
+fn main() export {
+  s = Ship(42);
+  h = halfFuel(&s);
+  println(h);  // => 21
+}
+
+fn halfFuel(s &Ship) int extern;
