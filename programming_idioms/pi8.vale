@@ -3,6 +3,10 @@
 // see roguelike.vale
 // Compile command: 
 // python ..\valec.py build pi8.vale ..\vstl\hashmap.vale ..\vstl\list.vale
+
+import stdlib.*;
+import stdlib.collections.*;
+
 fn main() export {
   // hashmap of key int, value string
   map = HashMap<int, str, IntHasher, IntEquator>(IntHasher(), IntEquator());

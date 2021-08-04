@@ -1,5 +1,8 @@
 // 1-  Print Hello World
 //  Print a literal string on standard output
+
+import stdlib.*;
+
 fn main() export {
     println("Hello world!");  // --> Hello world!
 }

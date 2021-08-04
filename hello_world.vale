@@ -1,5 +1,8 @@
 // Your first Vale program:
 // => ...  means:  program output is: ...
+
+import stdlib.*;
+
 fn main() export {
   println("Hello world from Vale!");  // => Hello world from Vale!
 }

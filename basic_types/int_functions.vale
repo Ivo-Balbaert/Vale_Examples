@@ -1,3 +1,6 @@
+import stdlib.*;
+import stdlib.math.*;
+
 fn main() export {
   n = 5;
   m = -3;

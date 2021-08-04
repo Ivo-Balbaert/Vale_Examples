@@ -3,6 +3,8 @@
 // if the number is divisible by 5 print ‘buzz’ 
 // or if the number if divisible by both print ‘fizzbuzz’.
 
+import stdlib.*;
+
 fn main() export {
   i! = 1;
   while (i <= 100) {

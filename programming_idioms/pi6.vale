@@ -1,7 +1,10 @@
 // 6 - Iterate over list values
 // Do something with each item x of an array-like collection items, regardless indexes.
+
+import stdlib.*;
+
 fn main() export {
-  lst = ["Storm", "Earth", "Fire"]; // this isa tuple in Vale
+  lst = []["Storm", "Earth", "Fire"]; // this is a static-sized array in Vale
   each lst (x){
     println(x);
   }

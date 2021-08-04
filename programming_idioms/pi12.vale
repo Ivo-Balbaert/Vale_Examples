@@ -1,6 +1,10 @@
 // 12 - Check if list contains a given value x
 // Compile command: 
 // python ..\valec.py build pi12.vale ..\vstl\list.vale
+
+import stdlib.*;
+import stdlib.collections.*;
+
 fn main() export {
   l = List<int>();
   l!.add(1);

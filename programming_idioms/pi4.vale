@@ -1,4 +1,7 @@
 // 4-   Create a function which returns the square of an integer
+
+import stdlib.*;
+
 fn main() export {
     println(square(9));
 }

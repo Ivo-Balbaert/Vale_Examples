@@ -1,3 +1,5 @@
+import stdlib.*;
+
 fn main() export {
   t1 = [23, 108, 37, 42, 49];    // tuple with same element type int
   println(t1.1);                 // => 108
@@ -5,51 +7,4 @@ fn main() export {
   t2 = [5, true, "V"];           // different element types
   println("Babylon " + t2.0);    // => Babylon 5
   println("Saturn " + t2[2]);    // => Saturn V
-
-  // loop over all elements with each, p is the iteration variable:
-  planets = ["Venus", "Earth", "Mars"];
-  planets.each( { println("Hello1 " + _ + "!"); } );
-  // =>
-  // Hello1 Venus!
-  // Hello1 Earth!
-  // Hello1 Mars!
-
-  // alternative form:
-  each planets (p){
-    println("Hello2 " + p + "!");
-  }
-  // =>
-  // Hello2 Venus!
-  // Hello2 Earth!
-  // Hello2 Mars!
-
-  // use eachI to access the index ix:
-  eachI planets (ix, p){
-    println(ix + ": " + p);
-  }
-  // =>
-  // 0: Venus
-  // 1: Earth
-  // 2: Mars
-
-  // still shorter alternative form:
-  each planets { println("Hello3 " + _ + "!"); }
-  // =>
-  // Hello3 Venus!
-  // Hello3 Earth!
-  // Hello3 Mars!
- 
-  // 2D:
-  tpl2D = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];    
-  each tpl2D (tpl){
-    each tpl {
-      print(" - " + _);
-    }
-    println("");
-  }
-// =>
-//  - 1 - 2 - 3
-//  - 4 - 5 - 6
-//  - 7 - 8 - 9
-
 }

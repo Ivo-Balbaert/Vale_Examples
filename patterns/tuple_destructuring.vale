@@ -1,3 +1,5 @@
+import stdlib.*;
+
 fn main() export {
   n = 5;
   (g, h) = double(5);

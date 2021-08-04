@@ -1,4 +1,8 @@
 // Compile with: python ..\valec.py build generic_structs.vale ..\vstl\list.vale
+
+import stdlib.*;
+import stdlib.collections.*;
+
 struct Firefly {  }
 
 fn crazyIvan(f &Firefly) { println("My name is Crazy Ivan!"); }

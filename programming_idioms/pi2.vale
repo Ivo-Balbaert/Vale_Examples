@@ -1,5 +1,8 @@
 // 2-  Print Hello World 10 times
 // Loop to execute some code a constant number of times num
+
+import stdlib.*;
+
 fn main() export {
     num! int = 1;
     while (num <= 10) {

@@ -1,3 +1,4 @@
+import stdlib.*;
 
 fn main() int export {
   while (true) {

@@ -1,4 +1,7 @@
 // call with: main 1 2
+
+import stdlib.*;
+
 fn main() export {
   println(getMainArg(0)); // => main
   println(getMainArg(1)); // => 1

@@ -1,3 +1,6 @@
+import stdlib.*;
+import stdlib.stdin.*;
+
 fn main() export {
 // stdinReadInt reads an integer from the user's keyboard
   println("Give a number > 0 and < 100: ");
@@ -5,7 +8,7 @@ fn main() export {
   if (n <= 0 or n >= 100) { println(" Incorrect input!"); }
   println("The input was: " + n);  // e.g. => The input was: 4
 
-  arr = MakeArray(n, {_ * 5});     // type of arr here is Array<int>.
+  arr = [*](n, {_ * 5});     // type of arr here is Array<final, int>.
   arr.each({ println(_); });
   // =>
   // 0
@@ -13,29 +16,7 @@ fn main() export {
   // 10
   // 15
 
-  // __getch: get a character from standard input
   println("Type a random key on your keyboard: ");
-  m = inputKey();
-  println("The key is: " + m); // e.g. :> The key is: 115
-}
-
-fn inputKey() int {
-  key! = 0;
-  while (true) {
-    mut key = __getch(); 
-    if (key == 81) { // Q
-      ret key;
-    } else if (key == 119) { // w
-      ret key;
-    } else if (key == 115) { // s
-      ret key;
-    } else if (key == 97) {  // a
-      ret key;
-    } else if (key == 100) { // d
-      ret key;
-    } else if (key == 10) {  // Enter key, do nothing 
-    }
-  }
-  __panic(); // unreachable, but needed to satisfy compiler, otherwise error:
-  // inputKey return type Coord(Share,Readonly,Int2()) doesn't match body's result: Coord(Share,Readonly,Void2())
+  m = getch();
+  println("The key code is: " + m); // e.g. :> The key is: 115
 }

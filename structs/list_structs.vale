@@ -1,3 +1,6 @@
+import stdlib.*;
+import stdlib.collections.*;
+
 struct Ship {
   name str;
   size int;

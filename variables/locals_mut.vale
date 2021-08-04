@@ -1,11 +1,13 @@
+import stdlib.*;
+
 fn main() export {
-  // typed mutable variable:
-  n! int = 73;
-  mut n = 42;
+  n int = 73;
+  // mutate variable:
+  set n = 42;
   println(n); // => 42
   
-  // mutable variable with type inference:
-  x! = "Europe!";
-  mut x = "Antarctica!";
+  // variable with type inference:
+  x = "Europe!";
+  set x = "Antarctica!";
   println(x); // => Antarctica!
 }

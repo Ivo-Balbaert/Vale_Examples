@@ -1,6 +1,9 @@
 // 5- Create a 2D Point data structure
 // Declare a container type for two floating-point numbers x and y
 // Feb 12 2021 - no print for float exist, --> int
+
+import stdlib.*;
+
 struct Point {
   x int;
   y int;

@@ -1,3 +1,5 @@
+import stdlib.*;
+
 struct MyStruct { a int; }
 struct OtherStruct { b MyStruct; }
 

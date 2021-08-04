@@ -1,6 +1,10 @@
 
 // build command: python ..\valec.py build lists.vale ..\vstl\list.vale
 
+import stdlib.*;
+import stdlib.collections.*;
+import stdlib.stringutils.*;
+
 fn main() export {
   // a list of integers:
   lst = List<int>();

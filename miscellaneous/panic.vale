@@ -1,6 +1,8 @@
 // panic with a string argument prints the message and exits, 
 // __panic exits immediately.
 
+import stdlib.*;
+
 fn main() export {
     println("before panic1");
     // panic 1:

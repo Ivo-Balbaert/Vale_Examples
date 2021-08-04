@@ -1,10 +1,23 @@
 // 9- Create a binary tree data structure
 // The structure must be recursive because left child and right child are binary trees too.
 // A node has access to children nodes, but not to its parent.
-struct BinTree {
+
+import stdlib.*;
+
+struct BinTreeNode {
   value int;
-  left  &BinTree;
-  right &BinTree;
+  left  Opt<BinTreeNode>;
+  right Opt<BinTreeNode>;
 }
 
-fn main() export {}
+fn main() export {
+  root =
+      BinTreeNode(
+          7,
+          None<BinTreeNode>(),
+          Some<BinTreeNode>(
+              BinTreeNode(
+                  42,
+                  None<BinTreeNode>(),
+                  None<BinTreeNode>())));
+}

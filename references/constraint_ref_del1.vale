@@ -1,5 +1,8 @@
 // When running:
 // Error: Dangling pointers detected!
+
+import stdlib.*;
+
 struct Marine { hp int; }
 
 fn main() export {
