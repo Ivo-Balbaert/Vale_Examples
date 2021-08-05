@@ -1,5 +1,3 @@
-**extern.vale**: demonstrates the use of the extern keyword - sqrt() is an external function defined in C (libc)
-
 **readInt.vale / readInt.c**: Vale calls an external C function readInt, defined in readInt.c; notice that in Vale readInt must be defined as extern (postfix), and the same in the C source (prefix)
 
 **externstrlen.vale / externstrlen.c**:  Vale calls an external C function extStrLen, defined in externstrlen.c;

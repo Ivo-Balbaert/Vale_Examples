@@ -1,3 +1,5 @@
+import stdlib.*;
+
 struct Spaceship {
   name str;
   numWings int;

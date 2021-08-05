@@ -1,3 +1,5 @@
+import stdlib.*;
+
 fn cMain() extern;
 fn main() export { cMain(); }
 

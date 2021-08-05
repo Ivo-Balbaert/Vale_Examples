@@ -17,6 +17,10 @@
 // where the player controls the @. When the player tries to move onto a space
 // already occupied by a goblin ("g"), it will destroy the goblin.
 
+import stdlib.*;
+import stdlib.stdin.*;
+import stdlib.collections.*;
+
 struct Vec<N, T> rules(N int) { // generics
   values [<imm> N * T];  // a struct with field values, 
                          // which is an immutable array of 2 integers
@@ -28,10 +32,10 @@ struct Goblin { // "g" on the map
 
 // if as an expression
 // initializing a 2D-array with a size 10 * 10 and a lambda:
-fn makeBoard() Array<mut, Array<mut, str>> {
+fn makeBoard() Array<mut, vary, Array<mut, vary, str>> {
   ret
-    MakeArray(10, (row){
-      MakeArray(10, (col){
+    [vary *](10, (row){
+      [vary *](10, (col){
         = if (row == 0) { "#" }
           else if (col == 0) { "#" }
           else if (row == 9) { "#" }
@@ -46,7 +50,7 @@ fn makeBoard() Array<mut, Array<mut, str>> {
 // using a hashmap: keys() - each - get
 // optional type: goblin?
 fn display(
-    board &Array<mut, Array<mut, str>>,
+    board &Array<mut, vary, Array<mut, vary, str>>,
     goblins &HashMap<int, Goblin, IntHasher, IntEquator>,
     playerRow int,
     playerCol int) {
@@ -61,7 +65,7 @@ fn display(
       else { // display goblins:
         goblins.keys().each((key){
           goblin? = goblins.get(key);  // goblin? is an optional boolean
-          goblin = goblin?^.get(); // TODO try getting rid of this ^, doesnt wanna find the get function
+          goblin = (goblin?).get();
           if (and(rowI == goblin.location.values.1, cellI == goblin.location.values.0)) {
             mut charToPrint = "g";
           }
@@ -77,7 +81,7 @@ fn display(
 fn inputKey() int {
   key! = 0;
   while (true) {
-    mut key = __getch();     // C routine to get a character from standard input
+    mut key = getch();     // Vale extern routine to get a character from standard input
     if (key == 10) {}        // Enter key, do nothing 
     else { ret key; }
   }
@@ -90,7 +94,7 @@ fn goblinAt?(
   row int,
   col int) bool {
   a = goblins.get(goblinKey);
-  b = a^.get(); // to get the value out of an optional
+  b = (a).get(); // to get the value out of an optional
   (goblinCol, goblinRow) = b.location.values;
   ret and(row == goblinRow, col == goblinCol);
 }
@@ -114,16 +118,16 @@ fn main() export {
 
   // hashmap of key int, value a Goblin struct
   goblins = HashMap<int, Goblin, IntHasher, IntEquator>(IntHasher(), IntEquator());
-  goblins!.add(13, Goblin(Vec([6, 3]))); // [col, row]
-  goblins!.add(14, Goblin(Vec([2, 6])));
-  goblins!.add(15, Goblin(Vec([5, 7])));
-  goblins!.add(17, Goblin(Vec([2, 5])));
-  goblins!.add(19, Goblin(Vec([7, 1])));
-  goblins!.add(23, Goblin(Vec([3, 3])));
-  goblins!.add(24, Goblin(Vec([1, 7])));
-  goblins!.add(25, Goblin(Vec([7, 6])));
-  goblins!.add(27, Goblin(Vec([4, 6])));
-  goblins!.add(29, Goblin(Vec([7, 4])));
+  goblins!.add(13, Goblin(Vec([imm][6, 3]))); // [col, row]
+  goblins!.add(14, Goblin(Vec([imm][2, 6])));
+  goblins!.add(15, Goblin(Vec([imm][5, 7])));
+  goblins!.add(17, Goblin(Vec([imm][2, 5])));
+  goblins!.add(19, Goblin(Vec([imm][7, 1])));
+  goblins!.add(23, Goblin(Vec([imm][3, 3])));
+  goblins!.add(24, Goblin(Vec([imm][1, 7])));
+  goblins!.add(25, Goblin(Vec([imm][7, 6])));
+  goblins!.add(27, Goblin(Vec([imm][4, 6])));
+  goblins!.add(29, Goblin(Vec([imm][7, 4])));
 
   running! = true;
   while (running) { // game loop

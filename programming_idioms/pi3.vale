@@ -1,6 +1,9 @@
 // 3-   Create a procedure
 // Like a function which doesn't return any value, thus has only side effects 
 // (e.g. Print to standard output)
+
+import stdlib.*;
+
 fn main() export {
     finish("All");
 }

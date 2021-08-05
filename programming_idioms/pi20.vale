@@ -4,13 +4,15 @@
 // Think of the most idiomatic way in the language to return 
 // the two values at the same time.
 
+import stdlib.*;
+
 fn main() export {
-  sm = [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ];
+  sm = [][ [][1, 2, 3], [][4, 5, 6], [][7, 8, 9] ];
   to_search = 4;
 
   found! = false;
-  eachI sm (i, m1){   
-    eachI m1 (j, m2){
+  eachI &sm (i, m1){   
+    eachI &m1 (j, m2){
       if (m2 == to_search) {
         mut found = true;
         println("The number " + to_search + " was found on row " + i + " and column " + j);
@@ -26,8 +28,8 @@ fn main() export {
   s! = 1;
   while (s <= 11) {
     mut found = false;
-    eachI sm (i, m1){   
-      eachI m1 (j, m2){
+    eachI &sm (i, m1){   
+      eachI &m1 (j, m2){
         if (m2 == s) {
           mut found = true;
           println("The number " + s + " was found on row " + i + " and column " + j);

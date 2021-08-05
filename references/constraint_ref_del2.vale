@@ -3,6 +3,8 @@
 // Tried to free concrete that had nonzero RC! Exiting!
 // Solutions: constraint_ref_del_solution1.vale / constraint_ref_del_solution2.vale
 
+import stdlib.*;
+
 struct Spaceship {
   name str;
   numWings int;

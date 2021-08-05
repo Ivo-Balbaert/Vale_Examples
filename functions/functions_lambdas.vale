@@ -1,3 +1,5 @@
+import stdlib.*;
+
 fn main() export {
   println("Half-Life " + double(1));         // => Half-Life 2
   println("Half-Life " + double_infer(1));   // => Half-Life 2

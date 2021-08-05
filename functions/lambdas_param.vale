@@ -1,10 +1,14 @@
 // a lambda as a function parameter
+
+import stdlib.*;
+
 fn main() export {
   a = do({ 42 });
   println(a); // => 42
 
   b! = 10;
-  { mut b = 42; }(); // the lambda which is called changes b to 42
+  lam = { mut b = 42; };
+  lam!(); // the lambda which is called changes b to 42
   println(b); // => 42
 
   // double closures:

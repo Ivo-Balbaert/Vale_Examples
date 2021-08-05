@@ -1,3 +1,5 @@
+import stdlib.*;
+
 struct Vec3 imm {
   x int;
   y int;

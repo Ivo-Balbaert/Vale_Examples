@@ -1,3 +1,5 @@
+import stdlib.*;
+
 fn main() export {
   // declaring strings:
   // immutable:
@@ -49,8 +51,5 @@ fn main() export {
   // escaping characters:
   println("\\");  // => \
   println("\"");  // => "
-  // don't work yet:
-  println("\'");  // => \'
-  println("\?"); // => \?
-  println("\0"); // => \0
+  println("\u0000");   // =>
 }

@@ -1,5 +1,8 @@
 // Solution 1: Use a local to store the data you still need, 
 // instead of a constraint ref:
+
+import stdlib.*;
+
 struct Spaceship {
   name str;
   numWings int;

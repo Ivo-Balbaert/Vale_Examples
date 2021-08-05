@@ -1,6 +1,9 @@
 // see also tuples.vale
+
+import stdlib.*;
+
 fn main() export {
-  arr1 = MakeArray(5, {_}); //  [0, 1, 2, 3, 4]
+  arr1 = [vary *](5, {_}); //  [0, 1, 2, 3, 4]
   // the type of arr1 is Array<mut, int>
   println(arr1[0]);         // => 0
   println(arr1.0);          // => 0
@@ -13,7 +16,7 @@ fn main() export {
   println(arr1.len()); // => 5
 
 // print out all elements:
-  arr2 = MakeArray(4, {_ * 2}); // [0, 2, 4, 6]
+  arr2 = [vary *](4, {_ * 2}); // [0, 2, 4, 6]
   arr2.each( { println(_); } );
 // =>
 // 0
@@ -42,14 +45,14 @@ fn main() export {
 // On index: 2 is item: 4
 // On index: 3 is item: 6
   
-  arr3 = MakeArray(4, {_ * 5}); // [0, 5, 10, 15]
+  arr3 = [vary *](4, {_ * 5}); // [0, 5, 10, 15]
   println(arr3[3]);    // => 15
   // println(arr3[4]); // at runtime => Index out of bounds! Exiting!
   // loop over the array: 
   arr3.each( { println(_); } );
  
   num = 9;
-  arr4 = MakeArray(num, {_ / 2}); 
+  arr4 = [vary *](num, {_ / 2}); 
   println(arr4[5]);   // 4 / 2 => 2
   arr4.each( { print(_ + " - "); } ); // => 0 - 0 - 1 - 1 - 2 - 2 - 3 - 3 - 4 -
   println("");
@@ -57,7 +60,7 @@ fn main() export {
   n = 2;
   m = 7;
   len =  n + m;
-  arr5 = MakeArray(len, {_ / 2});
+  arr5 = [vary *](len, {_ / 2});
   println(arr5[6]);   // 6 / 2 => 3 
 
   arr6 = initArr();
@@ -65,6 +68,6 @@ fn main() export {
   println("");
 }
 
-fn initArr() Array<mut, int> {
-  MakeArray(7, { _ * 100 })
+fn initArr() Array<mut, vary, int> {
+  [vary *](7, { _ * 100 })
 }

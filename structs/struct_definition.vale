@@ -1,4 +1,7 @@
 // struct with immutable fields:
+
+import stdlib.*;
+
 struct Spaceship {
   name str;
   numWings int;
@@ -12,7 +15,7 @@ struct MSpaceship {
 
 // immutable struct:
 struct ImmSpaceship imm {
-  name! str;
+  name str;
   numWings int;
 }
 

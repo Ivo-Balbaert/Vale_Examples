@@ -2,6 +2,10 @@
 // Access each key k with its value x from an associative array mymap, and print them.
 // Compile withcommand: 
 // python ..\valec.py build pi13.vale ..\vstl\hashmap.vale ..\vstl\list.vale
+
+import stdlib.*;
+import stdlib.collections.*;
+
 fn main() export {
   // hashmap of key int, value string
   map = HashMap<int, str, IntHasher, IntEquator>(IntHasher(), IntEquator());
@@ -12,7 +16,7 @@ fn main() export {
   map.keys().each((key){
     print(key + " : ");
     word? = map.get(key);
-    word = word?^.get(); // TODO try getting rid of this ^, doesnt wanna find the get function
+    word = (word?).get();
     println(word);
   });
 }

@@ -2,6 +2,9 @@
 // Running: java -cp C:\Vale\Valestrom.jar net.verdagon.vale.driver.Driver build -o build.vast open_interfaces2.vale
 
 // internal(-13337) Conflict in determining ordinary rules' runes: InferSolveFailure(Map(ImplicitRune2(CitizenTemplateName2(IShip,0:0),0) -> MutabilityTemplataType, CodeRune2(Functor0) -> CoordTemplataType, AnonymousSubstructParentInterfaceRune2() -> KindTemplataType),Map(),None,Inferences(Map(ImplicitRune2(CitizenTemplateName2(IShip,0:0),0) -> MutabilityTemplataType, CodeRune2(Functor0) -> CoordTemplataType, AnonymousSubstructParentInterfaceRune2() -> KindTemplataType),Map(ImplicitRune2(CitizenTemplateName2(IShip,0:0),0) -> MutabilityTemplata(Mutable), AnonymousSubstructParentInterfaceRune2() -> KindTemplata(InterfaceRef2(FullName2(List(),CitizenName2(IShip,List()))))),Map()),RangeS(CodeLocationS(-13337,0),CodeLocationS(-13337,0)),Not enough to solve! Couldn't figure out: Set(CodeRune2(Functor0)),List())
+
+import stdlib.*;
+
 interface IShip {
   fn launch(virtual ship &IShip);
 }

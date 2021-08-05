@@ -4,6 +4,8 @@
 
 // The program stops at the 1st vassert that fails, displaying the error message.
 
+import stdlib.*;
+
 fn main() export {
     vassert(true, "Test 1 succeeded!");
     vassert(false, "Test 2 failed!"); // program exits here with => Test 2 failed!

@@ -1,3 +1,5 @@
+import stdlib.*;
+
 struct Thing {
   v! Vec3i;
 }

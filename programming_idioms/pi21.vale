@@ -1,4 +1,7 @@
 // Idiom # 21 - Swap values
+
+import stdlib.*;
+
 fn main() export {
   a! = 1;
   b! = 2;

@@ -1,3 +1,5 @@
+import stdlib.*;
+
 fn main() export {
   n = 1;
   m = 2;

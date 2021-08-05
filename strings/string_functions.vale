@@ -1,3 +1,6 @@
+import stdlib.*;
+import stdlib.stringutils.*;
+
 fn main() export {
   // compare with spaceship operator <=> (useful for sorting)
   println("abc" <=> "abc");  // => 0
