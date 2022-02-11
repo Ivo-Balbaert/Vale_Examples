@@ -1,11 +1,11 @@
 import stdlib.*;
 
-fn main() export {
+exported func main() {
   i = readInt();
   println("User entered: " + i);
 }
 
-fn readInt() int extern;
+extern func readInt() int;
 
 // main
 // 5 // <-- input

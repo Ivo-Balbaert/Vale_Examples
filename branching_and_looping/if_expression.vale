@@ -1,20 +1,20 @@
 import stdlib.*;
 
-fn main() export {
+exported func main() {
   n = 1;
   m = 2;
   width =
-    if (n < m) {
-      = 42;
+    if n < m {
+      42
     } else {
-      = 150;
+      150
     };
     println(width); // => 42
 
   something =
-    if (4 < 7) {
+    if 4 < 7 {
       println("hi!");  // => hi!
-      = 7;    // = ;  needed when multiple statements in block
+      7
     } else {
       10      // works because its the only statement in the block
     };

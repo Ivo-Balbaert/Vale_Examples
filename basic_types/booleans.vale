@@ -1,6 +1,6 @@
 import stdlib.*;
 
-fn main() export {
+exported func main() {
   bt = true;
   bf = false;
 

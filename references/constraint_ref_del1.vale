@@ -5,7 +5,7 @@ import stdlib.*;
 
 struct Marine { hp int; }
 
-fn main() export {
+exported func main() {
   m = Marine(7);
   b = &m;
   drop(m);        // halts in Assist mode

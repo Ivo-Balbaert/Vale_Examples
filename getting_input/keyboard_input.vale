@@ -1,14 +1,14 @@
 import stdlib.*;
 import stdlib.stdin.*;
 
-fn main() export {
+exported func main() {
 // stdinReadInt reads an integer from the user's keyboard
   println("Give a number > 0 and < 100: ");
   n = stdinReadInt();
   if (n <= 0 or n >= 100) { println(" Incorrect input!"); }
   println("The input was: " + n);  // e.g. => The input was: 4
 
-  arr = [*](n, {_ * 5});     // type of arr here is Array<final, int>.
+  arr = [](n, {_ * 5});     // type of arr here is Array<final, int>.
   arr.each({ println(_); });
   // =>
   // 0

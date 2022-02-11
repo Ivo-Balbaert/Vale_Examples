@@ -4,11 +4,11 @@
 
 import stdlib.*;
 
-fn main() export {
+exported func main() {
     finish("All");
 }
 
-fn finish(name str) {
+func finish(name str) {
     println("My job here is done. Good bye " + name + "!");  
 }
 

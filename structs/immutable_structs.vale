@@ -20,7 +20,7 @@ struct Vec3i imm {
   z int;
 }
 
-fn main() export {
+exported func main() {
   ship = Spaceship("Serenity", 2);
   println(ship.numWings);     // => 2
   // ship.name = "XXX";   // error:  expected `;` or `}` after expression, but found: = "XXX";

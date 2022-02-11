@@ -1,10 +1,10 @@
 import stdlib.*;
 
-fn main() export {
+exported func main() {
   println(fact(5)); // => 120
 }
 
-fn fact(x int) int {
-  = if (x == 0) { 1 } 
-    else { x * fact(x - 1) }
+func fact(x int) int {
+  if x == 0 { 1 } 
+  else { x * fact(x - 1) }
 }

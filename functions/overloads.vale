@@ -1,6 +1,6 @@
 import stdlib.*;
 
-fn main() export {
+exported func main() {
     println(add(3, 3));                 // => 6
     println(add("Vale is ", "lovely")); // => Vale is lovely
 
@@ -11,18 +11,18 @@ fn main() export {
 }
 
 // function add is overloaded:
-fn add(a int, b int) infer-ret {+(a, b)}
-fn add(a str, b str) infer-ret {+(a, b)}
+func add(a int, b int) infer-ret {+(a, b)}
+func add(a str, b str) infer-ret {+(a, b)}
 
 // defining the ~ operator:
-fn ~(a int, b int) infer-ret {+(a, b)}
+func ~(a int, b int) infer-ret {+(a, b)}
 
 // overloading the + operator: (// from builtins\castutils.vale)
 // commented out, because gives error 
 // builtins/castutils.vale:14:1: Function FunctionName2(+,List(),List(Coord(Share,Readonly,Str2()), Coord(Share,Readonly,Bool2()))) already exists! Previous declaration at:
 // functions\overloads.vale:20:1
-// fn +(s str, b bool) str {  s + str(b)  }
-// fn +(i int, s str) str  {  str(i) + s  }
-// fn +(s str, i int) str  {  s + str(i)  }
+// func +(s str, b bool) str {  s + str(b)  }
+// func +(i int, s str) str  {  str(i) + s  }
+// func +(s str, i int) str  {  s + str(i)  }
 
 

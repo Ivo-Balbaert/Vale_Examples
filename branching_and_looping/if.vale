@@ -1,41 +1,41 @@
 import stdlib.*;
 
-fn main() export {
+exported func main() {
   first = 10;
   cond = 5;
   row = 2;
   col = 5;
   println(row == 2); // true
 
-  if (row == 2) { println("Right on!"); }   // => Right on!
+  if row == 2 { println("Right on!"); }   // => Right on!
   b = (row == 2);
-  if (b) { println("Right on!"); }          // => Right on!
+  if b { println("Right on!"); }          // => Right on!
    
-  if (cond < first) { println("first is greater"); } // => first is greater
+  if cond < first { println("first is greater"); } // => first is greater
 
   // nested if:
-  if (first <= 0) { println("first is less than or equal to 0"); } 
-  else if (first > 0 and first < cond) { println("first is between 0 and 5"); } 
+  if first <= 0 { println("first is less than or equal to 0"); } 
+  else if first > 0 and first < cond { println("first is between 0 and 5"); } 
   else { println("first is 5 or greater"); }     //  => first is 5 or greater
 
   // logical operators:
   killedGoblin = false;
-  if (not killedGoblin) { 
+  if not killedGoblin { 
     println("The goblin is still alive!");       // => The goblin is still alive!
   }
 
   n = 4;
-  if (n > 2 and n < 5) { println("The number is either 3 or 4"); }
+  if n > 2 and n < 5 { println("The number is either 3 or 4"); }
   // => The number is either 3 or 4
   // same:
-  if (and(n > 2, n < 5)) { println("The number is either 3 or 4"); }
+  if and(n > 2, n < 5) { println("The number is either 3 or 4"); }
   // => The number is either 3 or 4
   
   m = 1;
-  if (m > 2 or m < 5) { println("Bigger than 2 or smaller than 5"); }
+  if m > 2 or m < 5 { println("Bigger than 2 or smaller than 5"); }
   // => Bigger than 2 or smaller than 5
-  if (or(m > 2, m < 5)) { println("Bigger than 2 or smaller than 5"); }
+  if or(m > 2, m < 5) { println("Bigger than 2 or smaller than 5"); }
   // => Bigger than 2 or smaller than 5
 
-  if (n == 4 and m == 1)  { println("This works!"); }
+  if n == 4 and m == 1 { println("This works!"); }
 }

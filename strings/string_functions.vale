@@ -1,7 +1,7 @@
 import stdlib.*;
 import stdlib.stringutils.*;
 
-fn main() export {
+exported func main() {
   // compare with spaceship operator <=> (useful for sorting)
   println("abc" <=> "abc");  // => 0
   println("abc" <=> "abd");  // => -1

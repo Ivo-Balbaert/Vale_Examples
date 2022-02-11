@@ -5,7 +5,7 @@ import stdlib.*;
 import stdlib.collections.*;
 import stdlib.stringutils.*;
 
-fn main() export {
+exported func main() {
   // a list of integers:
   lst = List<int>();
   lst!.add(1);
@@ -23,20 +23,14 @@ fn main() export {
   // 3
   // 7
   // simpler form:
-  each &lst (p){ println(p); }
-  // =>
-  // 1
-  // 3
-  // 7
-  // still simpler form:
-  each &lst { println(_); }
+  foreach p in &lst { println(p); }
   // =>
   // 1
   // 3
   // 7
  
   // changing an element:
-  ix! = 2;
+  ix = 2;
   val = 99;
   lst!.set(ix, val);
   println(lst.get(2)); // => 99
@@ -50,7 +44,7 @@ fn main() export {
   println(lst.contains(3)); // => true
 
   // remove an element:
-  mut ix = 1;
+  set ix = 1;
   lst!.remove(ix); 
   lst.each( { println(_); } );
   // 1
@@ -69,7 +63,7 @@ fn main() export {
   lst2 = List<str>();
   lst2!.add("Hail");
   lst2!.add("Hydra!");
-  each &lst2 { println(_); }
+  foreach x in lst2 { println(x); }
   // =>
   // "Hail"
   // "Hydra!"

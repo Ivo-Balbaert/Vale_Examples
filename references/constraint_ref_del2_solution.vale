@@ -8,12 +8,12 @@ struct Spaceship {
   numWings int;
 }
 
-fn takeAndDestroy(ship Spaceship) {
+func takeAndDestroy(ship Spaceship) {
   println("Name: " + ship.name);
   // Ship is destroyed here, so constraint ref is violated!
 }
 
-fn main() export {
+exported func main() {
   ship = Spaceship("Serenity", 2); // ship contains an owning ref
   // shipCRef = &ship; // don't create a constraint ref!
   // use a local to store the data:
