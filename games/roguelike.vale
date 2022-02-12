@@ -21,9 +21,9 @@ import stdlib.*;
 import stdlib.stdin.*;
 import stdlib.collections.*;
 
-struct Vec<N, T> rules(N int) { // generics
-  values [<imm> N * T];  // a struct with field values, 
-                         // which is an immutable array of 2 integers
+struct Vec<N, T> where N int { // generics
+  values [#N]<imm>T;  // a struct with field values, 
+                         // which is an immutable array of N integers
 }
 
 struct Goblin { // "g" on the map
@@ -32,74 +32,74 @@ struct Goblin { // "g" on the map
 
 // if as an expression
 // initializing a 2D-array with a size 10 * 10 and a lambda:
-fn makeBoard() Array<mut, vary, Array<mut, vary, str>> {
+func makeBoard() Array<mut, Array<mut, str>> {
   ret
-    [vary *](10, (row){
-      [vary *](10, (col){
-        = if (row == 0) { "#" }
-          else if (col == 0) { "#" }
-          else if (row == 9) { "#" }
-          else if (col == 9) { "#" }
-          else { "." }
+    [](10, (row) => {
+      [](10, (col) => {
+        if row == 0 { "#" }
+        else if col == 0 { "#" }
+        else if row == 9 { "#" }
+        else if col == 9 { "#" }
+        else { "." }
       })
     });
 }
 
-// eachI looping
+// looping
 // logical and in an if
 // using a hashmap: keys() - each - get
 // optional type: goblin?
-fn display(
-    board &Array<mut, vary, Array<mut, vary, str>>,
+func display(
+    board &Array<mut, Array<mut, str>>,
     goblins &HashMap<int, Goblin, IntHasher, IntEquator>,
     playerRow int,
     playerCol int) {
-  toPrint! = "";
-  eachI (&board) (rowI, row){
-    eachI (&row) (cellI, cell){
-      charToPrint! = cell;
-    // display player:
-      if (and(rowI == playerRow, cellI == playerCol)) {
-        mut charToPrint = "@";
+  toPrint = "";
+  foreach [rowI, row] in board.entries() {
+    foreach [cellI, cell] in row.entries() {
+      charToPrint = cell;
+      // display player:
+      if rowI == playerRow and cellI == playerCol {
+        set charToPrint = "@";
       }
       else { // display goblins:
-        goblins.keys().each((key){
+        foreach key in goblins.keys() {
           goblin? = goblins.get(key);  // goblin? is an optional boolean
           goblin = (goblin?).get();
-          if (and(rowI == goblin.location.values.1, cellI == goblin.location.values.0)) {
-            mut charToPrint = "g";
+          if rowI == goblin.location.values.1 and cellI == goblin.location.values.0 {
+            set charToPrint = "g";
           }
-        });
+        }
       }
-      mut toPrint = toPrint + charToPrint; // add to same row
+      set toPrint = toPrint + charToPrint; // add to same row
     } 
-    mut toPrint = toPrint + "\n";
+    set toPrint = toPrint + "\n";
   } // next row
   print(toPrint); // print out the map
 }
 
-fn inputKey() int {
-  key! = 0;
-  while (true) {
-    mut key = getch();     // Vale extern routine to get a character from standard input
+func inputKey() int {
+  key = 0;
+  while true {
+    set key = getch();     // Vale extern routine to get a character from standard input
     if (key == 10) {}        // Enter key, do nothing 
     else { ret key; }
   }
-  __panic(); // should be unreachable
+  panic("unreachable"); // should be unreachable
 }
 
-fn goblinAt?(
+func goblinAt(
   goblins &HashMap<int, Goblin, IntHasher, IntEquator>,
   goblinKey int,
   row int,
   col int) bool {
   a = goblins.get(goblinKey);
   b = (a).get(); // to get the value out of an optional
-  (goblinCol, goblinRow) = b.location.values;
+  [goblinCol, goblinRow] = b.location.values;
   ret and(row == goblinRow, col == goblinCol);
 }
 
-fn main() export {
+exported func main() {
   // print instructions:
   println("Welcome to the ridiculously simplistic roguelike game!");
   println("Controls:");
@@ -113,66 +113,66 @@ fn main() export {
 
   board = makeBoard();
 
-  playerRow! = 4;
-  playerCol! = 3;
+  playerRow = 4;
+  playerCol = 3;
 
   // hashmap of key int, value a Goblin struct
   goblins = HashMap<int, Goblin, IntHasher, IntEquator>(IntHasher(), IntEquator());
-  goblins!.add(13, Goblin(Vec([imm][6, 3]))); // [col, row]
-  goblins!.add(14, Goblin(Vec([imm][2, 6])));
-  goblins!.add(15, Goblin(Vec([imm][5, 7])));
-  goblins!.add(17, Goblin(Vec([imm][2, 5])));
-  goblins!.add(19, Goblin(Vec([imm][7, 1])));
-  goblins!.add(23, Goblin(Vec([imm][3, 3])));
-  goblins!.add(24, Goblin(Vec([imm][1, 7])));
-  goblins!.add(25, Goblin(Vec([imm][7, 6])));
-  goblins!.add(27, Goblin(Vec([imm][4, 6])));
-  goblins!.add(29, Goblin(Vec([imm][7, 4])));
+  goblins!.add(13, Goblin(Vec(#[#][6, 3]))); // [col, row]
+  goblins!.add(14, Goblin(Vec(#[#][2, 6])));
+  goblins!.add(15, Goblin(Vec(#[#][5, 7])));
+  goblins!.add(17, Goblin(Vec(#[#][2, 5])));
+  goblins!.add(19, Goblin(Vec(#[#][7, 1])));
+  goblins!.add(23, Goblin(Vec(#[#][3, 3])));
+  goblins!.add(24, Goblin(Vec(#[#][1, 7])));
+  goblins!.add(25, Goblin(Vec(#[#][7, 6])));
+  goblins!.add(27, Goblin(Vec(#[#][4, 6])));
+  goblins!.add(29, Goblin(Vec(#[#][7, 4])));
 
-  running! = true;
-  while (running) { // game loop
+  running = true;
+  while running { // game loop
 
     display(&board, &goblins, playerRow, playerCol);
 
-    newPlayerRow! = playerRow;
-    newPlayerCol! = playerCol;
+    newPlayerRow = playerRow;
+    newPlayerCol = playerCol;
 
     key = inputKey();
     if (key == 81) {         // Q
-      mut running = false;   // --> jump out of game loop
+      set running = false;   // --> jump out of game loop
     } else if (key == 119) { // w - up
-      mut newPlayerRow = newPlayerRow - 1;
+      set newPlayerRow = newPlayerRow - 1;
     } else if (key == 115) { // s - down
-      mut newPlayerRow = newPlayerRow + 1;
+      set newPlayerRow = newPlayerRow + 1;
     } else if (key == 97) {  // a - left
-      mut newPlayerCol = newPlayerCol - 1;
+      set newPlayerCol = newPlayerCol - 1;
     } else if (key == 100) { // d - right
-      mut newPlayerCol = newPlayerCol + 1;
+      set newPlayerCol = newPlayerCol + 1;
     } else {
       println("Unknown key command, try again"); 
     }
 
-    killedGoblin! = false;
+    killedGoblin = false;
     // check if a goblin is destroyed:
-    goblins.keys().each((key){
+    foreach goblin_id in goblins.keys() {
       // is there a goblin on the new player position?
-      if (goblinAt?(&goblins, key, newPlayerRow, newPlayerCol)) {
-        goblins!.remove(key);
-        mut killedGoblin = true;
+      if goblinAt(&goblins, goblin_id, newPlayerRow, newPlayerCol) {
+        goblins!.remove(goblin_id);
+        set killedGoblin = true;
       } // --> player does not move!
-    }); 
+    }
 
     if (not killedGoblin) { // move player only when no goblin is killed
-      if (board[newPlayerRow][newPlayerCol] == ".") {
-        mut playerRow = newPlayerRow;
-        mut playerCol = newPlayerCol;
+      if board[newPlayerRow][newPlayerCol] == "." {
+        set playerRow = newPlayerRow;
+        set playerCol = newPlayerCol;
       }
     }
 
     // Test Game-over:
     if (len(goblins.keys()) == 0) { // all goblins are dead!
       println("You win!");
-      mut running = false;
+      set running = false;
     }
   }
 }

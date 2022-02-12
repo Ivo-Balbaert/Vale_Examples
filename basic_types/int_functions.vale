@@ -1,7 +1,7 @@
 import stdlib.*;
 import stdlib.math.*;
 
-fn main() export {
+exported func main() {
   n = 5;
   m = -3;
 

@@ -6,40 +6,40 @@
 
 import stdlib.*;
 
-fn main() export {
-  sm = [][ [][1, 2, 3], [][4, 5, 6], [][7, 8, 9] ];
+exported func main() {
+  sm = [#][ [#][1, 2, 3], [#][4, 5, 6], [#][7, 8, 9] ];
   to_search = 4;
 
-  found! = false;
-  eachI &sm (i, m1){   
-    eachI &m1 (j, m2){
-      if (m2 == to_search) {
-        mut found = true;
+  found = false;
+  foreach [i, m1] in sm.entries() {
+    foreach [j, m2] in m1.entries() {
+      if m2 == to_search {
+        set found = true;
         println("The number " + to_search + " was found on row " + i + " and column " + j);
       }
     }
   }
-  if (not found) {
+  if not found {
     println("The number " + to_search + " was not found!");
   }
  // => The number 4 was found on row 1 and column 0
 
 // searching in a range (s is number to search): 
-  s! = 1;
-  while (s <= 11) {
-    mut found = false;
-    eachI &sm (i, m1){   
-      eachI &m1 (j, m2){
-        if (m2 == s) {
-          mut found = true;
+  s = 1;
+  while s <= 11 {
+    set found = false;
+    foreach [i, m1] in sm.entries() {
+      foreach [j, m2] in m1.entries() {
+        if m2 == s {
+          set found = true;
           println("The number " + s + " was found on row " + i + " and column " + j);
         }
       }
     }
-    if (not found) {
+    if not found {
       println("The number " + s + " was not found!");
     }
-    mut s = s + 2;
+    set s = s + 2;
   }
 // =>
 // The number 1 was found on row 0 and column 0

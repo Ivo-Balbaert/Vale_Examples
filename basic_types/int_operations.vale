@@ -1,6 +1,6 @@
 import stdlib.*;
 
-fn main() export {
+exported func main() {
   a = 42;
   b = 108;
   

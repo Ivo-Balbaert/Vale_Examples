@@ -1,5 +1,5 @@
-fn sqrt(x float) float extern;
+extern func sqrt(x float) float;
 
-fn main() export {
+exported func main() {
   println(int(sqrt(float(16)))); // => 4
 }

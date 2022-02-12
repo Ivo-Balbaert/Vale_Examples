@@ -3,9 +3,9 @@
 
 import stdlib.*;
 
-fn main() export {
-  lst = []["Storm", "Earth", "Fire"]; // this is a static-sized array in Vale
-  eachI lst (i, x){
+exported func main() {
+  lst = [#]["Storm", "Earth", "Fire"]; // this is a static-sized array in Vale
+  foreach [i, x] in lst.entries() {
     println(i + ": " + x);
   }
 }

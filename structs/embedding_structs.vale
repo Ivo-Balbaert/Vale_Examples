@@ -11,11 +11,11 @@ struct Inner {
   x! int;
 }
 
-fn main() export {
+exported func main() {
   ms = OtherStruct(MyStruct(11)); 
   println(ms.b.a);    // => 11
 
   o = Outer(Inner(73));
-  mut o.inner.x = 42;
+  set o.inner.x = 42;
   println(o.inner.x); // => 42
 }

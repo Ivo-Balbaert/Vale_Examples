@@ -3,10 +3,10 @@
 
 import stdlib.*;
 
-fn main() export {
+exported func main() {
     println("before panic1");
     // panic 1:
-    __panic(); // exits program without message 
+    panic(); // exits program without message 
     // when panic1 is commented out:
     println("between panic1 and 2");
     // panic 2:

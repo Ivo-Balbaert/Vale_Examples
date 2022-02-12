@@ -1,9 +1,9 @@
 import stdlib.*;
 
-fn cMain() extern;
-fn main() export { cMain(); }
+extern func cMain();
+exported func main() { cMain(); }
 
-fn triple(x int) int export {
+exported func triple(x int) int {
   x * 3
 }
 

@@ -6,7 +6,7 @@ struct Ship {
   size int;
 }
 
-fn main() export {
+exported func main() {
   allShips = List<Ship>();
   allShips!.add(Ship("Serenity", 9));
   allShips!.add(Ship("Raza", 7));

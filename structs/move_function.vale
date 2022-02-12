@@ -5,12 +5,12 @@ struct Spaceship {
   numWings int;
 }
 
-fn display(b Spaceship) {
+func display(b Spaceship) {
   println(b.name); // => Enterprise
   // b will be dropped after the closing }
 }
 
-fn main() export {
+exported func main() {
   a = Spaceship("Enterprise", 4);
   // Move the Spaceship from a into display's argument b
   display(a);

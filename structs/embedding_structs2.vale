@@ -10,11 +10,11 @@ struct Vec3i {
   z int;
 }
 
-fn bork(thing &!Thing, v Vec3i) void {
-  mut thing.v = v;
+func bork(thing &!Thing, v Vec3i) void {
+  set thing.v = v;
 }
 
-fn main() export {
+exported func main() {
   thing = Thing(Vec3i(7, 8, 9));
   println(thing.v.y); // => 8
   bork(&!thing, Vec3i(4, 5, 6));

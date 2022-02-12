@@ -3,11 +3,11 @@
 
 import stdlib.*;
 
-fn main() export {
+exported func main() {
     num! int = 1;
-    while (num <= 10) {
+    while num <= 10 {
         println(num + ": Hello");
-        mut num = num + 1;
+        set num = num + 1;
     }
 }
 

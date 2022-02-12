@@ -2,11 +2,11 @@
 
 import stdlib.*;
 
-fn main() export {
+exported func main() {
     println(square(9));
 }
 
-fn square(i int) int {
+func square(i int) int {
     i * i  
 }
 

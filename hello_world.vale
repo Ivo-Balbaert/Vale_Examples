@@ -3,6 +3,6 @@
 
 import stdlib.*;
 
-fn main() export {
+exported func main() {
   println("Hello world from Vale!");  // => Hello world from Vale!
 }

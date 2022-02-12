@@ -5,7 +5,7 @@ struct Spaceship {
   numWings int;
 }
 
-fn main() export {
+exported func main() {
   a = Spaceship("Serenity", 2); 
   b = a;              // Move the ownership from a to b
   // b now owns the Spaceship:

@@ -1,17 +1,17 @@
 import stdlib.*;
 
-struct Ship export {
+exported struct Ship {
   fuel int;
 }
 
-fn getFuel(s &Ship) int export {
+exported func getFuel(s &Ship) int {
   s.fuel
 }
 
-fn main() export {
+exported func main() {
   s = Ship(42);
   h = halfFuel(&s);
   println(h);  // => 21
 }
 
-fn halfFuel(s &Ship) int extern;
+extern func halfFuel(s &Ship) int;

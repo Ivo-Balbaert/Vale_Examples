@@ -2,11 +2,11 @@
 
 import stdlib.*;
 
-fn main() export {
+exported func main() {
   a = do({ 42 });
   println(a); // => 42
 
-  b! = 10;
+  b = 10;
   lam = { mut b = 42; };
   lam!(); // the lambda which is called changes b to 42
   println(b); // => 42
@@ -17,7 +17,7 @@ fn main() export {
   println(e); // => 7
 }
 
-fn do(callable) int { // callable is a lambda, which returns 42
+func do<C>(callable C) int { // callable is a lambda, which returns 42
   callable()          // callable is called
 }
 

@@ -10,7 +10,7 @@ struct BinTreeNode {
   right Opt<BinTreeNode>;
 }
 
-fn main() export {
+exported func main() {
   root =
       BinTreeNode(
           7,

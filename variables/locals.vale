@@ -1,6 +1,6 @@
 import stdlib.*;
 
-fn main() export {
+exported func main() {
   // typed locals:
   b bool = true;
   n int = 42;
