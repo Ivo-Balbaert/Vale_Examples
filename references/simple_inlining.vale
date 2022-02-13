@@ -5,7 +5,7 @@ struct Spaceship {
   numWings int;
 }
 
-fn main() export {
+exported func main() {
   ship = inl Spaceship("Enterprise", 4);
   println(ship.name); // => Enterprise
 }

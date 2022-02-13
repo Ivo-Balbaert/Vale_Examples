@@ -1,13 +1,13 @@
 import stdlib.*;
 
-fn main() export {
+exported func main() {
   n = 5;
-  (g, h) = double(5);
+  [g, h] = double(5);
   println("The double of " + g + " is: " + h);
   // => The double of 5 is: 10
 }
 
-fn double(x int) infer-ret {  
-  ret [x, x * 2];
+func double(x int) infer-ret {  
+  ret (x, x * 2);
 }
 

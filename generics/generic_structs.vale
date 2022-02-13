@@ -5,14 +5,14 @@ import stdlib.collections.*;
 
 struct Firefly {  }
 
-fn crazyIvan(f &Firefly) { println("My name is Crazy Ivan!"); }
+func crazyIvan(f &Firefly) { println("My name is Crazy Ivan!"); }
 
 struct Flock<T> 
 {
   ships List<T>;
 }
 
-fn main() export {
+exported func main() {
   f = Flock<Firefly>(List<Firefly>());
   f.ships!.add(Firefly());
   f.ships!.add(Firefly());

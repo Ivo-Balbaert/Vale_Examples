@@ -1,32 +1,32 @@
 import stdlib.*;
 
 interface ISpaceship {
-  fn length(virtual self &ISpaceship) int;
-  fn honk(virtual self &ISpaceship);
+  func length(virtual self &ISpaceship) int;
+  func honk(virtual self &ISpaceship);
 }
 
-fn longerShip<T> (a &T, b &T) &T {  
+func longerShip<T> (a &T, b &T) &T {  
   if (a.length() > b.length()) { ret a; } 
   else { ret b; }
 }
 
 struct Raza {  }
 impl ISpaceship for Raza;
-fn length(r &Raza impl ISpaceship) int { 4 }
-fn honk(r &Raza impl ISpaceship) {  }
+func length(r &Raza impl ISpaceship) int { 4 }
+func honk(r &Raza impl ISpaceship) {  }
 
 struct Firefly {  }
 impl ISpaceship for Firefly;
-fn length(f &Firefly impl ISpaceship) int { 3 }
-fn honk(f &Firefly impl ISpaceship) {  }
+func length(f &Firefly impl ISpaceship) int { 3 }
+func honk(f &Firefly impl ISpaceship) {  }
 
-fn crazyIvan(f &Firefly) { 
+func crazyIvan(f &Firefly) { 
   println("It works!");   // => It works!
   println("The ships length is: "); // => The ships length is:
   println(length(f)); // => 3
 }
 
-fn main() export {
+exported func main() {
   flametail = Firefly();
   serenity = Firefly();
   ship = longerShip<Firefly>(&flametail, &serenity);

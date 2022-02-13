@@ -10,7 +10,7 @@ struct Spaceship {
   engine inl Engine;
 }
 
-fn main() export {
+exported func main() {
   ship = Spaceship(
       "Serenity",
       inl Engine("TCB", 10));

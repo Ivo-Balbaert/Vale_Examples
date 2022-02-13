@@ -6,14 +6,14 @@
 import stdlib.*;
 import stdlib.collections.*;
 
-fn main() export {
+exported func main() {
   // hashmap of key int, value string
   map = HashMap<int, str, IntHasher, IntEquator>(IntHasher(), IntEquator());
   map!.add(1, "one");
   map!.add(2, "two");
   map!.add(3, "three");
 
-  map.keys().each((key){
+  map.keys().each((key) => {
     print(key + " : ");
     word? = map.get(key);
     word = (word?).get();

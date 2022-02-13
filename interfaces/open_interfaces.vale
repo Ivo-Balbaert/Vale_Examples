@@ -6,10 +6,10 @@
 import stdlib.*;
 
 interface IShip {
-  fn launch(virtual ship &IShip);
+  func launch(virtual ship &IShip);
 }
 
-fn main() export {
+exported func main() {
   x = IShip({ println("Launching!"); });
   // x is an unnamed substruct which
   // implements IShip.

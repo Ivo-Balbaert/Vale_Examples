@@ -6,7 +6,7 @@
 
 import stdlib.*;
 
-fn main() export {
+exported func main() {
     vassert(true, "Test 1 succeeded!");
     vassert(false, "Test 2 failed!"); // program exits here with => Test 2 failed!
 

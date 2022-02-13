@@ -1,16 +1,16 @@
 import stdlib.*;
 
-fn main() export {
-  a! = 1;
-  while (a < 42) {
-    mut a = a + 1;
+exported func main() {
+  a = 1;
+  while a < 42 {
+    set a = a + 1;
   }
   println(a); // => 42
 
-  i! = 10;
-  while (i >= 0) {
+  i = 10;
+  while i >= 0 {
     println("The variable i is now: " + i);
-    mut i = i - 1;
+    set i = i - 1;
   }
 // The variable i is now: 9
 // The variable i is now: 8

@@ -10,11 +10,11 @@ struct Spaceship {
   numWings int;
 }
 
-fn display(s &Spaceship) {
+func display(s &Spaceship) {
   println(s.name);
 }
 
-fn main() export {
+exported func main() {
   carrier = Carrier(400, 8);
   ref = &carrier;
   println(ref.interceptors); // => 8

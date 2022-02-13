@@ -2,16 +2,16 @@
 
 import stdlib.*;
 
-fn main() export {
-  a! = 1;
-  b! = 2;
+exported func main() {
+  a = 1;
+  b = 2;
 
   println("a is: " + a);  // => a is: 1
   println("b is: " + b);  // => b is: 2
   
   temp = a;
-  mut a = b;
-  mut b = temp;
+  set a = b;
+  set b = temp;
 
   println("a is: " + a);  // => a is: 2
   println("b is: " + b);  // => b is: 1

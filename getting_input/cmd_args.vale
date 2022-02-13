@@ -2,7 +2,7 @@
 
 import stdlib.*;
 
-fn main() export {
+exported func main() {
   println(getMainArg(0)); // => main
   println(getMainArg(1)); // => 1
   println(getMainArg(2)); // => 2
@@ -11,5 +11,5 @@ fn main() export {
 }
 
 
-// fn numMainArgs() int extern;
-// fn getMainArg(i int) str extern;
+// extern func numMainArgs() int;
+// extern func getMainArg(i int) str;

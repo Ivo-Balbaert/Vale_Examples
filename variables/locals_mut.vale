@@ -1,6 +1,6 @@
 import stdlib.*;
 
-fn main() export {
+exported func main() {
   n int = 73;
   // mutate variable:
   set n = 42;

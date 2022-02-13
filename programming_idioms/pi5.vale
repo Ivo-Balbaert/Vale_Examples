@@ -9,7 +9,7 @@ struct Point {
   y int;
 }
 
-fn main() export {
+exported func main() {
   p1 = Point(2, 3);
   println(p1.x); // => 2
   println(p1.y); // => 3

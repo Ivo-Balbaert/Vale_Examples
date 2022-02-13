@@ -1,8 +1,8 @@
 import stdlib.*;
 
-fn main() int export {
-  while (true) {
-    if (true) {
+exported func main() int {
+  while true {
+    if true {
       ret 42;
     }
     // continue loop

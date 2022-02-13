@@ -26,7 +26,7 @@ struct Carrier {
   interceptors! int;
 }
 
-fn main() export {
+exported func main() {
   ship = Spaceship("Serenity", 2); // <-- ship is an owning reference
   println(ship.name);              // => Serenity
 
@@ -35,23 +35,23 @@ fn main() export {
 
   // how to change struct values:
   ship2 = MSpaceship("Serenity", 2);
-  mut ship2.name = "Enterprise";
-  mut ship2.numWings = 3;
+  set ship2.name = "Enterprise";
+  set ship2.numWings = 3;
   println(ship2.name);             // => Enterprise
   println(ship2.numWings);         // => 3
 
   m = Marine(9);
-  mut m.hp = 4;
+  set m.hp = 4;
   println(m.hp);                   // => 4
 
   c = Carrier(400, 8);
-  mut c.interceptors = 42;
+  set c.interceptors = 42;
   println(c.interceptors);         // => 42
   // implicitly drops ship by calling implicit ship^.drop(), 
   // same for ship2, m and c
 }
 
 // Implicit:
-// fn drop(s Spaceship) {
+// func drop(s Spaceship) {
 //   destruct s;  // frees the memory
 // }

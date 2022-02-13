@@ -1,13 +1,13 @@
 import stdlib.*;
 
-fn main() export {
+exported func main() {
   // declaring strings:
   // immutable:
   a str = "hello!";
   b = "goodbye!";
   // mutable:
-  c! = "end";
-  mut c = "beginning";
+  c = "end";
+  set c = "beginning";
 
   // length of a string:
   println(len("Orion"));     // => 5

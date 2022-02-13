@@ -6,9 +6,9 @@ struct Vec3 imm {
   z int;
 }
 
-fn makeVec() Vec3 { Vec3(3, 4, 5) }
+func makeVec() Vec3 { Vec3(3, 4, 5) }
 
-fn main() export {
+exported func main() {
   // Without destructure pattern:
   tempVec = makeVec();
   a = tempVec.x;
@@ -19,10 +19,10 @@ fn main() export {
   // => a, b and c are resp.: 3, 4, 5
 
   // Equivalent, using a destructure:
-  Vec3(d, e, f) = makeVec();
+  Vec3[d, e, f] = makeVec();
 
   // Equivalent; can leave off the type:
-  (g, h, i) = makeVec();
+  [g, h, i] = makeVec();
 
   println("a: " + a); // => 3
   println("d: " + d); // => 3

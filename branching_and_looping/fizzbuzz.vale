@@ -5,13 +5,13 @@
 
 import stdlib.*;
 
-fn main() export {
-  i! = 1;
-  while (i <= 100) {
-    if (i mod 3 == 0) { print("fizz"); }
-    if (i mod 5 == 0) { print("buzz"); }
-    if (i mod 3 != 0 and i mod 5 != 0) { print(i); }
-    mut i = i + 1;
+exported func main() {
+  i = 1;
+  while i <= 100 {
+    if i mod 3 == 0 { print("fizz"); }
+    if i mod 5 == 0 { print("buzz"); }
+    if i mod 3 != 0 and i mod 5 != 0 { print(i); }
+    set i = i + 1;
     println("");
   }
 }

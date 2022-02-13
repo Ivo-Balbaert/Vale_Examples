@@ -1,8 +1,8 @@
 import stdlib.*;
 
-fn extStrLen(haystackStr str) int extern;
+extern func extStrLen(haystackStr str) int;
 
-fn main() export {
+exported func main() {
   len = extStrLen("sprogwoggle");
   println(len); // => 11
 }

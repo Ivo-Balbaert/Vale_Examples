@@ -5,7 +5,7 @@ struct Spaceship {
   numWings int;
 }
 
-fn main() export {
+exported func main() {
   owningRef = Spaceship("Serenity", 2);
   nonOwningRef = &owningRef;  // nonOwningRef is a constraint reference
   println(owningRef.name);    // => Serenity

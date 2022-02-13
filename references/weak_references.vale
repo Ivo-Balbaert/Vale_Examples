@@ -1,17 +1,17 @@
 import stdlib.*;
 
-struct Base weakable {
+weakable struct Base {
   name str;
 }
 
 struct Spaceship {
   name str;
-  origin &&Base;
+  origin **Base;
 }
 
-fn printShipBase(ship &Spaceship) {
+func printShipBase(ship &Spaceship) {
   maybeOrigin = lock(ship.origin);
-  if (not maybeOrigin.isEmpty()) {
+  if not maybeOrigin.isEmpty() {
     o = maybeOrigin.get();
     println("Ship base: " + o.name);
   } else {
@@ -19,9 +19,9 @@ fn printShipBase(ship &Spaceship) {
   }
 }
 
-fn main() export {
+exported func main() {
   base = Base("Zion");
-  ship = Spaceship("Neb", &&base);
+  ship = Spaceship("Neb", **base);
 
   printShipBase(&ship);  // => Ship base: Zion
   drop(base);            // Destroys base.

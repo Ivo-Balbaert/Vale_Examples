@@ -5,7 +5,7 @@
 import stdlib.*;
 import stdlib.collections.*;
 
-fn main() export {
+exported func main() {
   l = List<int>();
   l!.add(1);
   l!.add(3);
