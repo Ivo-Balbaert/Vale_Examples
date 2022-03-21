@@ -12,13 +12,13 @@ func hopscotch(b &Bipedal) {
 }
 
 struct Human {  }
-func hop(h &Human impl Bipedal) { println("A Human hops!"); }
-func skip(h &Human impl Bipedal) { println("A Human skips!"); }
+func hop(h &Human) { println("A Human hops!"); }
+func skip(h &Human) { println("A Human skips!"); }
 impl Bipedal for Human;
 
 struct DarkElf {  }
-func hop(s &DarkElf impl Bipedal) { println("A DarkElf hops!"); }
-func skip(s &DarkElf impl Bipedal) { println("A DarkElf skips!"); }
+func hop(s &DarkElf) { println("A DarkElf hops!"); }
+func skip(s &DarkElf) { println("A DarkElf skips!"); }
 impl Bipedal for DarkElf;
 
 exported func main() {

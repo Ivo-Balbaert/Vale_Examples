@@ -19,7 +19,9 @@
 
 import stdlib.*;
 import stdlib.stdin.*;
-import stdlib.collections.*;
+import stdlib.collections.list.*;
+import stdlib.collections.hashmap.*;
+import stdlib.collections.hashset.*;
 
 struct Vec<N, T> where N int { // generics
   values [#N]<imm>T;  // a struct with field values, 
@@ -48,7 +50,7 @@ func makeBoard() Array<mut, Array<mut, str>> {
 // looping
 // logical and in an if
 // using a hashmap: keys() - each - get
-// optional type: goblin?
+// optional type: maybeGoblin
 func display(
     board &Array<mut, Array<mut, str>>,
     goblins &HashMap<int, Goblin, IntHasher, IntEquator>,
@@ -64,8 +66,8 @@ func display(
       }
       else { // display goblins:
         foreach key in goblins.keys() {
-          goblin? = goblins.get(key);  // goblin? is an optional boolean
-          goblin = (goblin?).get();
+          maybeGoblin = goblins.get(key);  // maybeGoblin is an optional boolean
+          goblin = (maybeGoblin).get();
           if rowI == goblin.location.values.1 and cellI == goblin.location.values.0 {
             set charToPrint = "g";
           }
@@ -118,16 +120,16 @@ exported func main() {
 
   // hashmap of key int, value a Goblin struct
   goblins = HashMap<int, Goblin, IntHasher, IntEquator>(IntHasher(), IntEquator());
-  goblins!.add(13, Goblin(Vec(#[#][6, 3]))); // [col, row]
-  goblins!.add(14, Goblin(Vec(#[#][2, 6])));
-  goblins!.add(15, Goblin(Vec(#[#][5, 7])));
-  goblins!.add(17, Goblin(Vec(#[#][2, 5])));
-  goblins!.add(19, Goblin(Vec(#[#][7, 1])));
-  goblins!.add(23, Goblin(Vec(#[#][3, 3])));
-  goblins!.add(24, Goblin(Vec(#[#][1, 7])));
-  goblins!.add(25, Goblin(Vec(#[#][7, 6])));
-  goblins!.add(27, Goblin(Vec(#[#][4, 6])));
-  goblins!.add(29, Goblin(Vec(#[#][7, 4])));
+  goblins.add(13, Goblin(Vec(#[#][6, 3]))); // [col, row]
+  goblins.add(14, Goblin(Vec(#[#][2, 6])));
+  goblins.add(15, Goblin(Vec(#[#][5, 7])));
+  goblins.add(17, Goblin(Vec(#[#][2, 5])));
+  goblins.add(19, Goblin(Vec(#[#][7, 1])));
+  goblins.add(23, Goblin(Vec(#[#][3, 3])));
+  goblins.add(24, Goblin(Vec(#[#][1, 7])));
+  goblins.add(25, Goblin(Vec(#[#][7, 6])));
+  goblins.add(27, Goblin(Vec(#[#][4, 6])));
+  goblins.add(29, Goblin(Vec(#[#][7, 4])));
 
   running = true;
   while running { // game loop
@@ -157,7 +159,7 @@ exported func main() {
     foreach goblin_id in goblins.keys() {
       // is there a goblin on the new player position?
       if goblinAt(&goblins, goblin_id, newPlayerRow, newPlayerCol) {
-        goblins!.remove(goblin_id);
+        goblins.remove(goblin_id);
         set killedGoblin = true;
       } // --> player does not move!
     }

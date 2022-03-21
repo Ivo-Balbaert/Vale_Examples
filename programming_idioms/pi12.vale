@@ -3,18 +3,18 @@
 // python ..\valec.py build pi12.vale ..\vstl\list.vale
 
 import stdlib.*;
-import stdlib.collections.*;
+import stdlib.collections.list.*;
 
 exported func main() {
   l = List<int>();
-  l!.add(1);
-  l!.add(3);
-  l!.add(7);
-  l!.add(42);
-  l!.add(75);
-  l!.add(81);
-  l!.add(99);
-  l!.add(108);
+  l.add(1);
+  l.add(3);
+  l.add(7);
+  l.add(42);
+  l.add(75);
+  l.add(81);
+  l.add(99);
+  l.add(108);
  
   x = 42;
   println(l.contains(x)); // => true

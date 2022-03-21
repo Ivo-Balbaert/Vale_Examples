@@ -5,27 +5,28 @@
 // python ..\valec.py build pi8.vale ..\vstl\hashmap.vale ..\vstl\list.vale
 
 import stdlib.*;
-import stdlib.collections.*;
+import stdlib.collections.hashmap.*;
+import stdlib.collections.hashset.*;
 
 exported func main() {
   // hashmap of key int, value string
   map = HashMap<int, str, IntHasher, IntEquator>(IntHasher(), IntEquator());
-  map!.add(1, "one");
-  map!.add(2, "two");
-  map!.add(3, "three");
+  map.add(1, "one");
+  map.add(2, "two");
+  map.add(3, "three");
 
-  println(map.has(2));                  // => true
-  println(map.has(42));                 // => false
-  map!.add(42, "forty-two");
-  println(map.has(42));                 // => true
+  println(map.ContainsKey(2));                  // => true
+  println(map.ContainsKey(42));                 // => false
+  map.add(42, "forty-two");
+  println(map.ContainsKey(42));                 // => true
   println(map.len());                   // => 4
   
   arrK = map.keys();
   arrK.each( { print(_ + " / "); } );   // => 1 / 2 / 3 / 42 /
   println("");
 
-  map!.remove(3);
-  println(map.has(3));                 // => false
+  map.remove(3);
+  println(map.ContainsKey(3));                 // => false
  
   arrV = map.values();
   arrV.each( { print(_ + " / "); } );   // => one / two / forty-two /

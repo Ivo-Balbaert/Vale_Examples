@@ -17,8 +17,8 @@ struct Marine {
 
 func Marine() Marine {
   // alternative for Marine(10, true)
-  this.hp = 10;
-  this.cool = true;
+  self.hp = 10;
+  self.cool = true;
 }
 
 struct Carrier {

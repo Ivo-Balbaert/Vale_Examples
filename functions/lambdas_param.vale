@@ -8,7 +8,7 @@ exported func main() {
 
   b = 10;
   lam = { mut b = 42; };
-  lam!(); // the lambda which is called changes b to 42
+  lam(); // the lambda which is called changes b to 42
   println(b); // => 42
 
   // double closures:
