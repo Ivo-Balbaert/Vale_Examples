@@ -16,7 +16,7 @@ exported func main() {
   
   // find:
   println(find(testString, "bork").isEmpty());    // => true
-  println(find(testString, "world").get().begin); // => 6
+  println(find(testString, "world").get()); // => 6
   
   // startsWith:
   println(testString.startsWith("Hel"));      // => true

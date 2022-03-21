@@ -4,7 +4,7 @@
 import stdlib.*;
 
 exported func main() {
-    num! int = 1;
+    num int = 1;
     while num <= 10 {
         println(num + ": Hello");
         set num = num + 1;

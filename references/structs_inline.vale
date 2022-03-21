@@ -7,13 +7,13 @@ struct Engine {
 
 struct Spaceship {
   name str;
-  engine inl Engine;
+  engine Engine;
 }
 
 exported func main() {
   ship = Spaceship(
       "Serenity",
-      inl Engine("TCB", 10));
+      Engine("TCB", 10));
   println(ship.name);           // => Serenity
   println(ship.engine.model);   // => TCB
   println(ship.engine.fuel);    // => 10

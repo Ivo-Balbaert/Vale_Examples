@@ -4,19 +4,20 @@
 // python ..\valec.py build pi13.vale ..\vstl\hashmap.vale ..\vstl\list.vale
 
 import stdlib.*;
-import stdlib.collections.*;
+import stdlib.collections.hashmap.*;
+import stdlib.collections.hashset.*;
 
 exported func main() {
   // hashmap of key int, value string
   map = HashMap<int, str, IntHasher, IntEquator>(IntHasher(), IntEquator());
-  map!.add(1, "one");
-  map!.add(2, "two");
-  map!.add(3, "three");
+  map.add(1, "one");
+  map.add(2, "two");
+  map.add(3, "three");
 
   map.keys().each((key) => {
     print(key + " : ");
-    word? = map.get(key);
-    word = (word?).get();
+    maybeWord = map.get(key);
+    word = (maybeWord).get();
     println(word);
   });
 }
